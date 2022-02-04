@@ -12,7 +12,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./customer/customer.module').then((x) => x.CustomerModule),
   },
-  { path: 'Warranty', component: WarrantyComponent },
+  {
+    path: 'Warranty',
+    loadChildren: () =>
+      import('./warranty/warranty.module').then((x) => x.WarrantyModule),
+  },
   {
     path: 'Dashboard',
     loadChildren: () =>

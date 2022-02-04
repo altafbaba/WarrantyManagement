@@ -1,43 +1,7 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav"></ul>
-    </div>
-  </div>
-</nav>
+<!-- customer fields component import -->
+<app-customer-fields></app-customer-fields>
 
-<ng-container [formGroup]="customergroup">
-  Name <input type="name" formControlName="name" /> Date<input
-    type="date"
-    formControlName="date"
-  />
-  <p>Mobile No. <input type="mobile" formControlName="mobile" /></p>
-  <p>Address <input type="address" formControlName="address" /></p>
-  <p>
-    State <input type="state" formControlName="state" /> city<input
-      type="city"
-      formControlName="city"
-    />
-  </p>
-</ng-container>
-<button (click)="save()">Save</button> -->
-
-<div class="col-md-7 col-lg-8">
-  <h4 class="mb-3">Customer Detailes</h4>
-  <form class="needs-validation" novalidate="">
-    <div class="row g-3" [formGroup]="customergroup">
+<!-- <div class="row g-3" [formGroup]="customergroup">
       <div class="col-sm-6">
         <label for="firstName" class="form-label">First name</label>
         <input
@@ -137,8 +101,6 @@
         />
         <div class="invalid-feedback">Zip code required.</div>
       </div>
-    </div>
+    </div> -->
 
-    <button class="w-100 btn btn-primary btn-lg" (click)="save()">Save</button>
-  </form>
-</div>
+<button class="m-5 btn btn-primary btn-lg" (click)="save()">Save</button>
