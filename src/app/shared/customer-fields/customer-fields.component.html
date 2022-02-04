@@ -2,7 +2,12 @@
 
 <div class="row g-2 m-5 flex" [formGroup]="customergroup">
   <div class="col-sm-3">
-    <label for="name" class="form-label">Name</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Input</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <!-- <label for="name" class="form-label">Name</label>
     <input
       type="text"
       formControlName="name"
@@ -11,7 +16,7 @@
       placeholder=""
       value=""
       style="width: 300px"
-    />
+    /> -->
   </div>
 
   <!-- <div class="col-sm-3">

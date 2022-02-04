@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardCardComponent } from './dashboard-card/dashboard-card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { MaterialCustomModule } from '../shared/material.module';
 
 const dashboardRoutes: Routes = [
   {
@@ -18,6 +19,7 @@ const dashboardRoutes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forChild(dashboardRoutes),
+    MaterialCustomModule,
   ],
 })
 export class DashboardModule {}

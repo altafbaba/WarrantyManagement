@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-customer-fields',
@@ -12,7 +12,7 @@ export class CustomerFieldsComponent implements OnInit {
   ngOnInit(): void {}
 
   customergroup: FormGroup = new FormGroup({
-    name: new FormControl(''),
+    name: new FormControl('', [Validators.required]),
     // lastName: new FormControl(''),
     //date: new FormControl(''),
     address: new FormControl(''),

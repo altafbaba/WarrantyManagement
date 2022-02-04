@@ -1,1 +1,49 @@
-<router-outlet ></router-outlet>
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+    (click)="drawer.toggle()"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-drawer-container
+  class="example-container"
+  autosize
+  style="width: 100%; height: 100%"
+>
+  <mat-drawer
+    #drawer
+    opened
+    class="example-sidenav"
+    style="width: 200px; padding-top: 20px"
+    mode="side"
+  >
+    <button mat-button class="sideNavButton" routerLink="Dashboard">
+      Dashboard
+    </button>
+    <button mat-button class="sideNavButton" routerLink="Customer">
+      Customer
+    </button>
+  </mat-drawer>
+
+  <router-outlet></router-outlet>
+</mat-drawer-container>

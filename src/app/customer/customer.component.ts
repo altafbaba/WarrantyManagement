@@ -18,11 +18,12 @@ export class CustomerComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
 
   save(): void {
+    this._cusComp.customergroup.markAllAsTouched();
     // console.log(this._cusComp.customergroup);
-    // if (this._cusComp.customergroup.invalid) {
-    //   this.isError = true;
-    //   return;
-    // }
+    if (this._cusComp.customergroup.invalid) {
+      this.isError = true;
+      return;
+    }
     // console.log(this._cusComp.customergroup.value);
   }
 }
