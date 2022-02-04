@@ -1,0 +1,144 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav"></ul>
+    </div>
+  </div>
+</nav>
+
+<ng-container [formGroup]="customergroup">
+  Name <input type="name" formControlName="name" /> Date<input
+    type="date"
+    formControlName="date"
+  />
+  <p>Mobile No. <input type="mobile" formControlName="mobile" /></p>
+  <p>Address <input type="address" formControlName="address" /></p>
+  <p>
+    State <input type="state" formControlName="state" /> city<input
+      type="city"
+      formControlName="city"
+    />
+  </p>
+</ng-container>
+<button (click)="save()">Save</button> -->
+
+<div class="col-md-7 col-lg-8">
+  <h4 class="mb-3">Customer Detailes</h4>
+  <form class="needs-validation" novalidate="">
+    <div class="row g-3" [formGroup]="customergroup">
+      <div class="col-sm-6">
+        <label for="firstName" class="form-label">First name</label>
+        <input
+          type="text"
+          formControlName="firstName"
+          class="form-control"
+          id="firstName"
+          placeholder=""
+          value=""
+        />
+        <div class="invalid-feedback">Valid first name is required.</div>
+      </div>
+
+      <div class="col-sm-6">
+        <label for="lastName" class="form-label">Last name</label>
+        <input
+          type="text"
+          formControlName="lastName"
+          class="form-control"
+          id="lastName"
+          placeholder=""
+          value=""
+        />
+        <div class="invalid-feedback">Valid last name is required.</div>
+      </div>
+      <div class="col-sm-6">
+        <label for="firstName" class="form-label">Mobile no</label>
+        <input
+          type="text"
+          formControlName="mobile"
+          class="form-control"
+          id="firstName"
+          placeholder=""
+          value=""
+        />
+        <div class="invalid-feedback">Valid first name is required.</div>
+      </div>
+
+      <div class="col-12">
+        <label for="email" class="form-label"
+          >Email <span class="text-muted">(Optional)</span></label
+        >
+        <input
+          type="email"
+          formControlName="email"
+          class="form-control"
+          id="email"
+          placeholder="you@example.com"
+        />
+        <div class="invalid-feedback">
+          Please enter a valid email address for shipping updates.
+        </div>
+      </div>
+
+      <div class="col-12">
+        <label for="address" class="form-label">Address</label>
+        <input
+          type="text"
+          formControlName="address"
+          class="form-control"
+          id="address"
+          placeholder="1234 Main St"
+        />
+        <div class="invalid-feedback">Please enter your shipping address.</div>
+      </div>
+      <div class="col-md-3">
+        <label for="zip" class="form-label">State</label>
+        <input
+          type="text"
+          formControlName="state"
+          class="form-control"
+          id="state"
+          placeholder=""
+        />
+        <div class="invalid-feedback">state code required.</div>
+      </div>
+      <div class="col-md-3">
+        <label for="zip" class="form-label">City</label>
+        <input
+          type="text"
+          formControlName="city"
+          class="form-control"
+          id="city"
+          placeholder=""
+        />
+        <div class="invalid-feedback">city code required.</div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="zip" class="form-label">Zip</label>
+        <input
+          type="text"
+          formControlName="zip"
+          class="form-control"
+          id="zip"
+          placeholder=""
+        />
+        <div class="invalid-feedback">Zip code required.</div>
+      </div>
+    </div>
+
+    <button class="w-100 btn btn-primary btn-lg" (click)="save()">Save</button>
+  </form>
+</div>

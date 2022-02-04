@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav"></ul>
+    </div>
+  </div>
+</nav>
+<div class="row">
+  <app-dashboard-card
+    class="col-3"
+    title="Next 30 Days Warranty Exp. List"
+    [count]="20"
+  ></app-dashboard-card>
+  <app-dashboard-card
+    class="col-3"
+    title="Active Customer"
+  ></app-dashboard-card>
+  <app-dashboard-card class="col-3" title="Customer List"></app-dashboard-card>
+  <app-dashboard-card class="col-3"></app-dashboard-card>
+</div>
