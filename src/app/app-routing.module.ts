@@ -32,6 +32,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./dealer/dealer.module').then((x) => x.DealerModule),
   },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./featare/auth/auth.module').then((x) => x.AuthModule),
+  },
 ];
 
 @NgModule({
