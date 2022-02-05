@@ -1,112 +1,41 @@
 <!-- shared  -->
 
-<div class="row g-2 m-5 flex" [formGroup]="customergroup">
-  <div class="col-sm-3">
-    <mat-form-field appearance="outline">
-      <mat-label>Input</mat-label>
-      <input matInput formControlName="name" />
-    </mat-form-field>
+<div
+  style="display: flex; flex-wrap: wrap; column-gap: 21px"
+  [formGroup]="customergroup"
+>
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" />
+  </mat-form-field>
 
-    <!-- <label for="name" class="form-label">Name</label>
-    <input
-      type="text"
-      formControlName="name"
-      class="form-control"
-      id="firstName"
-      placeholder=""
-      value=""
-      style="width: 300px"
-    /> -->
-  </div>
+  <mat-form-field appearance="outline">
+    <mat-label>Mobile No</mat-label>
+    <input matInput formControlName="mobile" />
+  </mat-form-field>
 
-  <!-- <div class="col-sm-3">
-    <label for="lastName" class="form-label">Last name</label>
-    <input
-      type="text"
-      formControlName="lastName"
-      class="form-control"
-      id="lastName"
-      placeholder=""
-      value=""
-    />
-  </div> -->
+  <mat-form-field appearance="outline">
+    <mat-label>Email Id</mat-label>
+    <input matInput formControlName="email" />
+  </mat-form-field>
 
-  <div class="col-sm-3">
-    <label for="mobile" class="form-label">Mobile no</label>
-    <input
-      type="text"
-      formControlName="mobile"
-      class="form-control"
-      id="firstName"
-      placeholder=""
-      value=""
-      style="width: 300px; flex: auto"
-    />
-  </div>
+  <mat-form-field appearance="outline">
+    <mat-label>Address</mat-label>
+    <input matInput formControlName="address" />
+  </mat-form-field>
 
-  <div class="col-sm-3">
-    <label for="email" class="form-label"
-      >Email <span class="text-muted">(Optional)</span></label
-    >
-    <input
-      type="email"
-      formControlName="email"
-      class="form-control"
-      id="email"
-      placeholder=""
-      style="width: 300px"
-    />
-    <div class="invalid-feedback">
-      Please enter a valid email address for shipping updates.
-    </div>
-  </div>
+  <mat-form-field appearance="outline">
+    <mat-label>State</mat-label>
+    <input matInput formControlName="state" />
+  </mat-form-field>
 
-  <div>
-    <label for="address" class="form-label">Address</label>
-    <input
-      type="text"
-      formControlName="address"
-      class="form-control"
-      id="address"
-      placeholder=""
-      style="width: 940px; height: 70px"
-    />
-    <div class="invalid-feedback">Please enter your shipping address.</div>
-  </div>
-  <div class="col-md-3" style="margin-right: 10px">
-    <label for="zip" class="form-label">State</label>
-    <input
-      type="text"
-      formControlName="state"
-      class="form-control"
-      id="state"
-      placeholder=""
-    />
-    <div class="invalid-feedback">state code required.</div>
-  </div>
-  <div class="col-sm-3">
-    <label for="zip" class="form-label">City</label>
-    <input
-      type="text"
-      formControlName="city"
-      class="form-control"
-      id="city"
-      placeholder=""
-      style="width: 300px"
-    />
-    <div class="invalid-feedback">city code required.</div>
-  </div>
+  <mat-form-field appearance="outline">
+    <mat-label>City</mat-label>
+    <input matInput formControlName="city" />
+  </mat-form-field>
 
-  <div class="col-sm-3">
-    <label for="zip" class="form-label">Zip</label>
-    <input
-      type="text"
-      formControlName="zip"
-      class="form-control"
-      id="zip"
-      placeholder=""
-      style="width: 300px"
-    />
-    <div class="invalid-feedback">Zip code required.</div>
-  </div>
+  <mat-form-field appearance="outline">
+    <mat-label>Zip</mat-label>
+    <input matInput formControlName="zip" />
+  </mat-form-field>
 </div>

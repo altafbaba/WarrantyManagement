@@ -8,6 +8,11 @@ import { WarrantyModule } from './warranty/warranty.module';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'Dashboard',
+    pathMatch: 'full',
+  },
+  {
     path: 'Customer',
     loadChildren: () =>
       import('./customer/customer.module').then((x) => x.CustomerModule),
@@ -21,6 +26,11 @@ const routes: Routes = [
     path: 'Dashboard',
     loadChildren: () =>
       import('./dashboard/dashboard.module').then((x) => x.DashboardModule),
+  },
+  {
+    path: 'Dealer',
+    loadChildren: () =>
+      import('./dealer/dealer.module').then((x) => x.DealerModule),
   },
 ];
 

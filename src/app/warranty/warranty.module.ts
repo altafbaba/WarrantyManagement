@@ -4,7 +4,8 @@ import { WarrantyComponent } from './warranty.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
-const worrantycomponent: Routes = [
+import { MaterialCustomModule } from '../shared/material.module';
+const warrantyRoutes: Routes = [
   {
     path: '',
     component: WarrantyComponent,
@@ -17,8 +18,9 @@ const worrantycomponent: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forChild(worrantycomponent),
+    RouterModule.forChild(warrantyRoutes),
     SharedModule,
+    MaterialCustomModule,
   ],
 })
 export class WarrantyModule {}
