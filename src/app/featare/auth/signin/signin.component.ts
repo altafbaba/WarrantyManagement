@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AuthService } from 'src/app/core/auth/auth.service';
 
 @Component({
   selector: 'app-signin',
@@ -12,11 +13,11 @@ export class SigninComponent implements OnInit {
     password: new FormControl(''),
   });
 
-  constructor() {}
+  constructor(private _authService: AuthService) {}
 
   ngOnInit(): void {}
 
   login() {
-    console.log(this.signgroup.value);
+    this._authService.signin(this.signgroup.value);
   }
 }
