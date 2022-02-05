@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-dealer',
@@ -8,6 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class DealerComponent implements OnInit {
   constructor() {}
 
+  dealergroup: FormGroup = new FormGroup({
+    dealername: new FormControl('', Validators.required),
+    address: new FormControl(''),
+    email: new FormControl(''),
+    mobile: new FormControl(''),
+    state: new FormControl(''),
+    city: new FormControl(''),
+    pincode: new FormControl(''),
+  });
+
   ngOnInit(): void {}
-  save() {}
+  save() {
+    console.log(this.dealergroup.value);
+  }
 }
