@@ -9,9 +9,12 @@ export class AuthService {
 
   signin(credential: any) {
     this._http
-      .post('http://192.168.1.103:8000/auth/login', credential)
-      .subscribe((response) => {
-        console.log(response);
+      .post('http://localhost:8000/auth/login', credential)
+      .subscribe((response: any) => {
+        this.storeAccessToken(response.data.accessToken);
       });
+  }
+  private storeAccessToken(accessToken: string) {
+    localStorage.setItem('loginToken', accessToken);
   }
 }

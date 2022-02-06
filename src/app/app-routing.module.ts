@@ -9,7 +9,7 @@ import { WarrantyModule } from './warranty/warranty.module';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'Dashboard',
+    redirectTo: 'auth/signin',
     pathMatch: 'full',
   },
   {
@@ -36,6 +36,11 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () =>
       import('./featare/auth/auth.module').then((x) => x.AuthModule),
+  },
+  {
+    path: 'user',
+    loadChildren: () =>
+      import('./featare/user/user.module').then((x) => x.UserModule),
   },
 ];
 

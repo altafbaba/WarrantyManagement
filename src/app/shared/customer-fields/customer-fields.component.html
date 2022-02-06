@@ -19,9 +19,13 @@
     <input matInput formControlName="email" />
   </mat-form-field>
 
-  <mat-form-field appearance="outline">
+  <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>Address</mat-label>
-    <input matInput formControlName="address" />
+    <textarea
+      matInput
+      placeholder="Address"
+      formControlName="address"
+    ></textarea>
   </mat-form-field>
 
   <mat-form-field appearance="outline">

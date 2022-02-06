@@ -1,33 +1,30 @@
 <!-- customer fields component import -->
 <div style="margin: 16px">
   <mat-card>
-    <h6 style="margin-bottom: 18px">Customer Details</h6>
+    <h6 style="margin-bottom: 18px">Warranty Details</h6>
     <app-customer-fields></app-customer-fields>
   </mat-card>
-
-  <div class="col-sm-3">
+</div>
+<div style="margin: 16px">
+  <mat-card style="display: flex; flex-wrap: wrap; column-gap: 21px">
     <mat-form-field appearance="outline">
       <mat-label>Product</mat-label>
       <input matInput />
     </mat-form-field>
-  </div>
-  <div class="col-sm-3">
     <mat-form-field appearance="outline">
       <mat-label>Modeal No</mat-label>
       <input matInput />
     </mat-form-field>
-  </div>
-  <div class="col-sm-3">
     <mat-form-field appearance="outline">
       <mat-label>Warranty Start Date</mat-label>
       <input matInput />
     </mat-form-field>
-  </div>
-  <div class="col-sm-3">
     <mat-form-field appearance="outline">
       <mat-label>Warranty End Date</mat-label>
       <input matInput />
     </mat-form-field>
-  </div>
-  <button mat-raised-button color="primary">Save</button>
+    <div style="display: flex; justify-content: end">
+      <button mat-raised-button color="primary" (click)="save()">Save</button>
+    </div>
+  </mat-card>
 </div>

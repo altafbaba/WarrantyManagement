@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { MatButtonModule } from '@angular/material/button';
+import { MaterialCustomModule } from '../shared/material.module';
 const customerRoutes: Routes = [
   {
     path: '',
@@ -20,6 +21,7 @@ const customerRoutes: Routes = [
     RouterModule.forChild(customerRoutes),
     SharedModule,
     MatButtonModule,
+    MaterialCustomModule,
   ],
 })
 export class CustomerModule {}

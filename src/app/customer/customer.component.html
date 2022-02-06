@@ -1,7 +1,9 @@
-<!-- customer fields component import -->
-<app-customer-fields></app-customer-fields>
+<mat-card>
+  <h6 style="margin-bottom: 18px">Customer Details</h6>
+  <!-- customer fields component import -->
+  <app-customer-fields></app-customer-fields>
 
-<!-- <div class="row g-3" [formGroup]="customergroup">
+  <!-- <div class="row g-3" [formGroup]="customergroup">
       <div class="col-sm-6">
         <label for="firstName" class="form-label">First name</label>
         <input
@@ -103,14 +105,15 @@
       </div>
     </div> -->
 
-<!-- <button class="m-5 btn btn-primary btn-lg" (click)="save()">Save</button> -->
-<div
-  style="
-    display: flex;
-    justify-content: end;
-    margin-left: 22px;
-    margin-right: 22px;
-  "
->
-  <button mat-raised-button color="primary" (click)="save()">Save</button>
-</div>
+  <!-- <button class="m-5 btn btn-primary btn-lg" (click)="save()">Save</button> -->
+  <div
+    style="
+      display: flex;
+      justify-content: end;
+      margin-left: 22px;
+      margin-right: 22px;
+    "
+  >
+    <button mat-raised-button color="primary" (click)="save()">Save</button>
+  </div>
+</mat-card>
