@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DealerService } from '../core/dealer/dealer.service';
 
 @Component({
   selector: 'app-dealer',
@@ -7,13 +8,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./dealer.component.scss'],
 })
 export class DealerComponent implements OnInit {
-  constructor() {}
+  constructor(private _dealer: DealerService) {}
 
   dealergroup: FormGroup = new FormGroup({
-    dealername: new FormControl('', Validators.required),
-    address: new FormControl(''),
+    name: new FormControl('', [Validators.required]),
+    address1: new FormControl(''),
     email: new FormControl(''),
-    mobile: new FormControl(''),
+    contactNo: new FormControl(''),
     state: new FormControl(''),
     city: new FormControl(''),
     pincode: new FormControl(''),
@@ -21,6 +22,6 @@ export class DealerComponent implements OnInit {
 
   ngOnInit(): void {}
   save() {
-    console.log(this.dealergroup.value);
+    this._dealer.createDealer(this.dealergroup.value);
   }
 }

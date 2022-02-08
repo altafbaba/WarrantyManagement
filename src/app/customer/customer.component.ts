@@ -24,6 +24,6 @@ export class CustomerComponent implements OnInit, AfterViewInit {
       this.isError = true;
       return;
     }
-    // console.log(this._cusComp.customergroup.value);
+    console.log(this._cusComp.customergroup.value);
   }
 }

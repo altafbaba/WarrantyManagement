@@ -1,15 +1,25 @@
-<mat-toolbar color="primary">
-  <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with menu icon"
-    (click)="drawer.toggle()"
-  >
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>Warranty Management Syatem</span>
-  <span class="example-spacer"></span>
-</mat-toolbar>
+<div>
+  <mat-toolbar color="primary">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      (click)="drawer.toggle()"
+    >
+      <mat-icon matTooltip="Menu">menu</mat-icon>
+    </button>
+
+    <span>Warranty Management Syatem</span>
+
+    <span class="example-spacer"></span>
+
+    <div>
+      <button mat-icon-button matTooltip="Logout" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+</div>
 
 <mat-drawer-container
   class="example-container"
