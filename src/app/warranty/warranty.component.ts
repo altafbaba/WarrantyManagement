@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DealerService } from '../core/dealer/dealer.service';
 
 @Component({
   selector: 'app-warranty',
@@ -7,7 +8,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./warranty.component.scss'],
 })
 export class WarrantyComponent implements OnInit {
-  constructor() {}
+  data: any[] = [];
+  constructor(private _dealerService: DealerService) {}
 
   warrantygroup: FormGroup = new FormGroup({
     productname: new FormControl('', [Validators.required]),
@@ -16,7 +18,11 @@ export class WarrantyComponent implements OnInit {
     warrantyenddate: new FormControl(''),
   });
   isError: boolean = false;
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._dealerService.getDealers().subscribe((response: any) => {
+      this.data = response.data;
+    });
+  }
   save() {
     this.warrantygroup.markAllAsTouched();
     if (this.warrantygroup.invalid) {

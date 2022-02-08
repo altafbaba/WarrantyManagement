@@ -1,0 +1,14 @@
+<table style="border: 1px; width: 100%">
+  <tr>
+    <th>Name</th>
+    <th>Mob</th>
+    <th>Address</th>
+    <th>City</th>
+  </tr>
+  <tr *ngFor="let wrnty of data">
+    <td>{{ wrnty.name }}</td>
+    <td>{{ wrnty.contactNo }}</td>
+    <td>{{ wrnty.address1 }}</td>
+    <td>{{ wrnty.city }}</td>
+  </tr>
+</table>

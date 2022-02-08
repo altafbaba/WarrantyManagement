@@ -17,4 +17,11 @@ export class DealerService {
         console.log(response);
       });
   }
+
+  getDealers() {
+    return this._http.get('http://localhost:8000/vendor');
+    // .subscribe((response) => {
+    //   console.log(response);
+    // });
+  }
 }
