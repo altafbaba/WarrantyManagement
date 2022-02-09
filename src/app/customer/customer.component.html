@@ -2,7 +2,19 @@
 <mat-card style="margin: 20px">
   <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>Dealer Name</mat-label>
-    <input matInput placeholder="" value="" />
+    <input [formControl]="dealerCtrl" matInput [matAutocomplete]="auto" />
+    <mat-autocomplete
+      autoActiveFirstOption
+      #auto="matAutocomplete"
+      [displayWith]="displayFn"
+    >
+      <mat-option
+        *ngFor="let dealer of filteredOptions | async"
+        [value]="dealer"
+      >
+        {{ dealer.name }}
+      </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
 </mat-card>
 <mat-card style="margin: 20px">

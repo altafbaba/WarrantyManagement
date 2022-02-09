@@ -1,28 +1,30 @@
-<h6>Warranty Details</h6>
+<h5>Warranty Details</h5>
 <div style="margin: 16px">
   <mat-card>
+    <h6>Customer Details</h6>
     <!-- customer fields component import -->
     <app-customer-fields></app-customer-fields>
   </mat-card>
 </div>
 <div style="margin: 16px" [formGroup]="warrantygroup">
   <mat-card style="display: flex; flex-wrap: wrap; column-gap: 21px">
+    <h6>Product Details</h6>
     <mat-form-field appearance="outline">
       <mat-label>Product</mat-label>
 
-      <input matInput formControlName="productname" />
+      <input matInput formControlName="name" />
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Modeal No</mat-label>
-      <input matInput formControlName="modealno" />
+      <input matInput formControlName="contactNo" />
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Warranty Start Date</mat-label>
-      <input matInput formControlName="warrantystartdate" />
+      <input matInput formControlName="address1" />
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Warranty End Date</mat-label>
-      <input matInput formControlName="warrantyenddate" />
+      <input matInput formControlName="email" />
     </mat-form-field>
     <div style="display: flex; justify-content: end">
       <button mat-raised-button color="primary" (click)="save()">Save</button>
