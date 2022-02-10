@@ -6,7 +6,19 @@
 >
   <mat-form-field appearance="outline">
     <mat-label>Name</mat-label>
-    <input matInput formControlName="name" />
+    <input matInput formControlName="name" matInput [matAutocomplete]="auto" />
+    <mat-autocomplete
+      autoActiveFirstOption
+      #auto="matAutocomplete"
+      [displayWith]="displayFn"
+    >
+      <mat-option
+        *ngFor="let dealer of filteredOptions | async"
+        [value]="dealer"
+      >
+        {{ dealer.name }}
+      </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
