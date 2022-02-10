@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { DashboardService } from '../auth/dashboard/dashboard.service';
+import { IDashboard } from '../auth/dashboard/dashboard.types';
+import { IDTO } from '../core/DTO/DTO.types';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +10,12 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  constructor() {}
+  data: IDashboard;
+  constructor(private _dashboardService: DashboardService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._dashboardService.getDashboard().subscribe((val: IDTO) => {
+      this.data = val.data;
+    });
+  }
 }

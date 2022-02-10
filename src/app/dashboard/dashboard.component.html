@@ -1,6 +1,12 @@
 <div style="display: flex; gap: 10px">
-  <app-dashboard-card title="Dealer List" [count]="20"></app-dashboard-card>
-  <app-dashboard-card title="Active Customer"></app-dashboard-card>
+  <app-dashboard-card
+    title="Dealer List"
+    [count]="data?.assets.assetStatusCount.IN_POOL"
+  ></app-dashboard-card>
+  <app-dashboard-card
+    title="Active Customer"
+    [count]="data?.users.totalUsers"
+  ></app-dashboard-card>
   <app-dashboard-card title="Upcoming Warranty Exp. List"></app-dashboard-card>
 
   <app-dashboard-card title="Warranty Exp. Customer List"></app-dashboard-card>
