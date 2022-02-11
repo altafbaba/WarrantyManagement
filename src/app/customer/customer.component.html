@@ -1,34 +1,35 @@
-<h6>Customer Details</h6>
-<mat-card style="margin: 20px">
-  <mat-form-field class="example-full-width" appearance="outline">
-    <mat-label>Dealer Name</mat-label>
-    <input [formControl]="dealerCtrl" matInput [matAutocomplete]="auto" />
-    <mat-autocomplete
-      autoActiveFirstOption
-      #auto="matAutocomplete"
-      [displayWith]="displayFn"
-    >
-      <mat-option
-        *ngFor="let dealer of filteredOptions | async"
-        [value]="dealer"
-      >
-        {{ dealer.name }}
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
-</mat-card>
-<mat-card style="margin: 20px">
-  <!-- customer fields component import -->
-  <app-customer-fields></app-customer-fields>
+<div class="container mt-4">
+  <h4>Customer Details</h4>
 
-  <div
-    style="
-      display: flex;
-      justify-content: end;
-      margin-left: 22px;
-      margin-right: 22px;
-    "
-  >
-    <button mat-raised-button color="primary" (click)="save()">Save</button>
+  <div class="mt-4">
+    <!-- customer fields component import -->
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Dealer Name</mat-label>
+      <input [formControl]="dealerCtrl" matInput [matAutocomplete]="auto" />
+      <mat-autocomplete
+        autoActiveFirstOption
+        #auto="matAutocomplete"
+        [displayWith]="displayFn"
+      >
+        <mat-option
+          *ngFor="let dealer of filteredOptions | async"
+          [value]="dealer"
+        >
+          {{ dealer.name }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <app-customer-fields></app-customer-fields>
+
+    <div
+      style="
+        display: flex;
+        justify-content: end;
+        margin-left: 22px;
+        margin-right: 22px;
+      "
+    >
+      <button mat-raised-button color="primary" (click)="save()">Save</button>
+    </div>
   </div>
-</mat-card>
+</div>

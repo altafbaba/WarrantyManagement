@@ -1,4 +1,4 @@
-<div>
+<div class="main-container">
   <mat-toolbar color="primary">
     <button
       mat-icon-button
@@ -19,32 +19,34 @@
       </button>
     </div>
   </mat-toolbar>
-</div>
 
-<mat-drawer-container
-  class="example-container"
-  autosize
-  style="width: 100%; height: 100%"
->
-  <mat-drawer
-    #drawer
-    opened
-    class="example-sidenav"
-    style="width: 200px; padding-top: 20px"
-    mode="side"
+  <mat-drawer-container
+    class="example-container"
+    autosize
+    style="width: 100%; height: 100%"
   >
-    <button mat-button class="sideNavButton" routerLink="Dashboard">
-      Dashboard
-    </button>
-    <button mat-button class="sideNavButton" routerLink="Dealer">Dealer</button>
-    <button mat-button class="sideNavButton" routerLink="Customer">
-      Customer
-    </button>
-    <button mat-button class="sideNavButton" routerLink="Warranty">
-      Warranty
-    </button>
-    <button mat-button class="sideNavButton" routerLink="user">User</button>
-  </mat-drawer>
+    <mat-drawer
+      #drawer
+      opened
+      class="example-sidenav"
+      style="width: 200px; padding-top: 20px"
+      mode="side"
+    >
+      <button mat-button class="sideNavButton" routerLink="Dashboard">
+        Dashboard
+      </button>
+      <button mat-button class="sideNavButton" routerLink="Dealer">
+        Dealer
+      </button>
+      <button mat-button class="sideNavButton" routerLink="Customer">
+        Customer
+      </button>
+      <button mat-button class="sideNavButton" routerLink="Warranty">
+        Warranty
+      </button>
+      <button mat-button class="sideNavButton" routerLink="user">User</button>
+    </mat-drawer>
 
-  <router-outlet></router-outlet>
-</mat-drawer-container>
+    <router-outlet></router-outlet>
+  </mat-drawer-container>
+</div>
