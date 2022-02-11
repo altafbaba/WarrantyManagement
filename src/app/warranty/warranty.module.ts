@@ -6,15 +6,25 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialCustomModule } from '../shared/material.module';
 import { WarrantyListComponent } from './warranty-list/warranty-list.component';
+import { WarrantyformComponent } from './warrantyform/warrantyform.component';
 const warrantyRoutes: Routes = [
   {
     path: '',
     component: WarrantyComponent,
   },
+
+  {
+    path: 'warrantyform',
+    component: WarrantyformComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [WarrantyComponent, WarrantyListComponent],
+  declarations: [
+    WarrantyComponent,
+    WarrantyListComponent,
+    WarrantyformComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,

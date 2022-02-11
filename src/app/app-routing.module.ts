@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { WarrantyComponent } from './warranty/warranty.component';
 import { WarrantyModule } from './warranty/warranty.module';
+import { WarrantyformComponent } from './warranty/warrantyform/warrantyform.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,13 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () =>
       import('./featare/user/user.module').then((x) => x.UserModule),
+  },
+  {
+    path: 'warrantyform',
+    loadChildren: () =>
+      import('./warranty/warrantyform/warrantyform.component').then(
+        (x) => x.WarrantyformComponent
+      ),
   },
 ];
 
