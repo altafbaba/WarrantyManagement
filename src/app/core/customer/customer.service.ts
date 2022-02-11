@@ -29,9 +29,7 @@ export class CustomerService {
   createCustomer(_customer: any) {
     let url = `${this._serverUrl}/vendor`;
 
-    this._http.post(url, _customer).subscribe((res) => {
-      console.log(res);
-    });
+    return this._http.post(url, _customer);
   }
   getCustomers() {
     let url = `${this._serverUrl}/vendor`;

@@ -5,6 +5,8 @@ import { DealerService } from '../core/dealer/dealer.service';
 import { CustomerFieldsComponent } from '../shared/customer-fields/customer-fields.component';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
@@ -21,7 +23,9 @@ export class CustomerComponent implements OnInit, AfterViewInit {
 
   constructor(
     private _customerService: CustomerService,
-    private _getdearlerService: DealerService
+    private _getdearlerService: DealerService,
+    private _snackBar: MatSnackBar,
+    private _router: Router
   ) {}
 
   // If accessing Child COmponent using VIew Child -----> reference should be in AfterViewInit
@@ -73,7 +77,17 @@ export class CustomerComponent implements OnInit, AfterViewInit {
     //   return;
     // }
     // console.log(this._cusComp.customergroup.value);
-    this._customerService.createCustomer(this._cusComp.customergroup.value);
+    this._customerService
+      .createCustomer(this._cusComp.customergroup.value)
+      .subscribe({
+        error: (err) => {
+          this._snackBar.open(err.message, 'Close')._dismissAfter(3500);
+        },
+        next: (res) => {
+          this._snackBar.open('User Created', 'Close')._dismissAfter(3500);
+          this._router.navigateByUrl('/Warranty');
+        },
+      });
   }
   //autofiled
   displayFn(value: any) {
