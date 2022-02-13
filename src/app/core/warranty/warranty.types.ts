@@ -1,4 +1,4 @@
-export interface ICustomer {
+export interface IWarranty {
   name: string;
   address: string;
   email?: string;
@@ -6,4 +6,8 @@ export interface ICustomer {
   state: string;
   city: string;
   pincode: number;
+  product: string;
+  modelno: string;
+  wsdate: string;
+  wedate: string;
 }

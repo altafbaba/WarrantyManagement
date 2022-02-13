@@ -14,17 +14,27 @@
       <input matInput formControlName="name" />
     </mat-form-field>
     <mat-form-field appearance="outline">
-      <mat-label>Modeal No</mat-label>
+      <mat-label>Model No</mat-label>
       <input matInput formControlName="contactNo" />
     </mat-form-field>
-    <mat-form-field appearance="outline">
+    <!-- <mat-form-field appearance="outline">
       <mat-label>Warranty Start Date</mat-label>
       <input matInput formControlName="address1" />
+    </mat-form-field> -->
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Warranty Start Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="address1" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker touchUi #picker></mat-datepicker>
     </mat-form-field>
-    <mat-form-field appearance="outline">
+
+    <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Warranty End Date</mat-label>
-      <input matInput formControlName="email" />
+      <input matInput [matDatepicker]="picker2" formControlName="address1" />
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker touchUi #picker2></mat-datepicker>
     </mat-form-field>
+
     <div style="display: flex; justify-content: end">
       <button mat-raised-button color="primary" (click)="save()">Save</button>
     </div>

@@ -15,4 +15,8 @@ export class WarrantyService {
         console.log(Response);
       });
   }
+
+  getWarranty() {
+    return this._http.get('http://localhost:8000/vendor');
+  }
 }
