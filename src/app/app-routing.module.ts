@@ -64,6 +64,13 @@ const routes: Routes = [
             (x) => x.CustomerFormComponent
           ),
       },
+      {
+        path: 'warranty-card',
+        loadChildren: () =>
+          import('./warranty/warranty-card/warranty-card.component').then(
+            (x) => x.WarrantyCardComponent
+          ),
+      },
     ],
   },
 ];

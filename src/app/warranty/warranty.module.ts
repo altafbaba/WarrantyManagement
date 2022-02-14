@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WarrantyComponent } from './warranty.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { MaterialCustomModule } from '../shared/material.module';
 import { WarrantyListComponent } from './warranty-list/warranty-list.component';
 import { WarrantyformComponent } from './warrantyform/warrantyform.component';
+import { WarrantyCardComponent } from './warranty-card/warranty-card.component';
 const warrantyRoutes: Routes = [
   {
     path: '',
@@ -17,6 +18,11 @@ const warrantyRoutes: Routes = [
     path: 'warrantyform',
     component: WarrantyformComponent,
   },
+
+  {
+    path: 'warranty-card',
+    component: WarrantyCardComponent,
+  },
 ];
 
 @NgModule({
@@ -24,6 +30,7 @@ const warrantyRoutes: Routes = [
     WarrantyComponent,
     WarrantyListComponent,
     WarrantyformComponent,
+    WarrantyCardComponent,
   ],
   imports: [
     CommonModule,

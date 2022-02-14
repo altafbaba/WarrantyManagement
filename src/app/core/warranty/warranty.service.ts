@@ -19,4 +19,9 @@ export class WarrantyService {
   getWarranty() {
     return this._http.get('http://localhost:8000/vendor');
   }
+  getWarrantybyId() {
+    return this._http.get(
+      'http://localhost:8000/vendor/62051a115f0a2dff5836df80'
+    );
+  }
 }

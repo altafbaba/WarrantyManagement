@@ -36,6 +36,10 @@ export class WarrantyListComponent implements OnInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
+
+  openDetails(raw: any) {
+    console.log(raw);
+  }
 }
 
 export interface PeriodicElement {
