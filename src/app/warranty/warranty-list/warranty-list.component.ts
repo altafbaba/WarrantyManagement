@@ -4,6 +4,8 @@ import { AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { WarrantyService } from 'src/app/core/warranty/warranty.service';
+import { MatDialog } from '@angular/material/dialog';
+import { WarrantyCardComponent } from '../warranty-card/warranty-card.component';
 @Component({
   selector: 'app-warranty-list',
   templateUrl: './warranty-list.component.html',
@@ -25,7 +27,8 @@ export class WarrantyListComponent implements OnInit {
 
   constructor(
     private _dealerService: DealerService,
-    private _warrantyService: WarrantyService
+    private _warrantyService: WarrantyService,
+    private _dialog: MatDialog
   ) {}
   ngOnInit(): void {
     this._warrantyService.getWarranty().subscribe((res: any) => {
@@ -38,7 +41,7 @@ export class WarrantyListComponent implements OnInit {
   }
 
   openDetails(raw: any) {
-    console.log(raw);
+    this._dialog.open(WarrantyCardComponent, { data: raw._id });
   }
 }
 
