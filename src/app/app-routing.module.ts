@@ -56,6 +56,14 @@ const routes: Routes = [
             (x) => x.WarrantyformComponent
           ),
       },
+
+      {
+        path: 'customer-form',
+        loadChildren: () =>
+          import('./customer/customer-form/customer-form.component').then(
+            (x) => x.CustomerFormComponent
+          ),
+      },
     ],
   },
 ];

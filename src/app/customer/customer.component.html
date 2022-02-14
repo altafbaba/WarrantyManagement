@@ -1,9 +1,72 @@
+<H6>Customer Details</H6>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Customer Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="contactNo">
+      <th mat-header-cell *matHeaderCellDef>Mobile No</th>
+      <td mat-cell *matCellDef="let element">{{ element.contactNo }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="product">
+      <th mat-header-cell *matHeaderCellDef>Product</th>
+      <td mat-cell *matCellDef="let element">{{ element.product }}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="model">
+      <th mat-header-cell *matHeaderCellDef>Model</th>
+      <td mat-cell *matCellDef="let element">{{ element.model }}</td>
+    </ng-container>
+    <ng-container matColumnDef="wsdate">
+      <th mat-header-cell *matHeaderCellDef>State</th>
+      <td mat-cell *matCellDef="let element">{{ element.wsdate }}</td>
+    </ng-container>
+    <ng-container matColumnDef="wedate">
+      <th mat-header-cell *matHeaderCellDef>City</th>
+      <td mat-cell *matCellDef="let element">{{ element.wedate }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    [pageSizeOptions]="[10, 20]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+  >
+  </mat-paginator>
+</div>
+
+<button
+  mat-fab
+  color="primary"
+  style="position: absolute !important; bottom: 40px; right: 80px"
+  routerLink="customer-form"
+>
+  <mat-icon>add</mat-icon>
+</button>
+
+<!-- 
+
 <div class="container mt-4">
   <h4>Customer Details</h4>
 
   <div class="mt-4">
-    <!-- customer fields component import -->
-    <mat-form-field class="example-full-width" appearance="outline">
+     customer fields component import -->
+<!-- <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Dealer Name</mat-label>
       <input [formControl]="dealerCtrl" matInput [matAutocomplete]="auto" />
       <mat-autocomplete
@@ -31,5 +94,5 @@
     >
       <button mat-raised-button color="primary" (click)="save()">Save</button>
     </div>
-  </div>
-</div>
+  </div> -->
+<!-- </div> -->
