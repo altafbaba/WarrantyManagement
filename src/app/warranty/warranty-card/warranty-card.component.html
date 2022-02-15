@@ -1,8 +1,22 @@
-<h1 mat-dialog-title>Dialog with elements</h1>
+<h1 mat-dialog-title>Warranty Detail</h1>
 <div mat-dialog-content>
-  {{ warrantyData?.name }}
-  {{ warrantyData?.city }}
-  {{ warrantyData?.city }}
+  <p>
+    Customer Name {{ warrantyData?.name }} Mobile No
+    {{ warrantyData?.city }} Email Id {{ warrantyData?.city }}
+  </p>
+  <p>
+    Address
+    {{ warrantyData?.city }}
+  </p>
+  <p>
+    State {{ warrantyData?.city }} City{{ warrantyData?.city }} PinCode
+    {{ warrantyData?.city }}
+  </p>
+  Product {{ warrantyData?.city }} Model {{ warrantyData?.city }}
+  <p>
+    Warranty Start Date {{ warrantyData?.city }} Warranty End Date
+    {{ warrantyData?.city }}
+  </p>
 </div>
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Close</button>
