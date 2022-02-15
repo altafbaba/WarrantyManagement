@@ -1,5 +1,7 @@
-<H6>Customer Details</H6>
-<div class="mat-elevation-z8">
+<div style="margin-left: 35px; margin-top: 10px">
+  <H4>Customer Details</H4>
+</div>
+<div class="mat-elevation-z8" style="margin: 35px">
   <table mat-table [dataSource]="dataSource">
     <!-- Position Column -->
     <ng-container matColumnDef="position">
@@ -43,7 +45,7 @@
   </table>
 
   <mat-paginator
-    [pageSizeOptions]="[10, 20]"
+    [pageSizeOptions]="[5, 10, 20]"
     showFirstLastButtons
     aria-label="Select page of periodic elements"
   >
@@ -53,7 +55,7 @@
 <button
   mat-fab
   color="primary"
-  style="position: absolute !important; bottom: 40px; right: 80px"
+  style="position: absolute !important; bottom: 50px; right: 85px"
   routerLink="customer-form"
 >
   <mat-icon>add</mat-icon>
