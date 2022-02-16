@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaterialCustomModule } from '../shared/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DealerFormComponent } from './dealer-form/dealer-form.component';
+import { DealerCardComponent } from './dealer-card/dealer-card.component';
 
 const dealerRoutess: Routes = [
   {
@@ -18,7 +19,7 @@ const dealerRoutess: Routes = [
 ];
 
 @NgModule({
-  declarations: [DealerComponent, DealerFormComponent],
+  declarations: [DealerComponent, DealerFormComponent, DealerCardComponent],
   imports: [
     CommonModule,
     MaterialCustomModule,

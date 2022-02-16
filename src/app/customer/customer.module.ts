@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MaterialCustomModule } from '../shared/material.module';
 import { CustomerFormComponent } from './customer-form/customer-form.component';
+import { CustomerCardComponent } from './customer-card/customer-card.component';
 const customerRoutes: Routes = [
   {
     path: '',
@@ -18,7 +19,7 @@ const customerRoutes: Routes = [
   },
 ];
 @NgModule({
-  declarations: [CustomerComponent, CustomerFormComponent],
+  declarations: [CustomerComponent, CustomerFormComponent, CustomerCardComponent],
   imports: [
     CommonModule,
     FormsModule,

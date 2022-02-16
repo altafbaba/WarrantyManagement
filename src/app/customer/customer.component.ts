@@ -15,8 +15,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
-import { Router } from '@angular/router';
+import { Router, RouterLinkWithHref } from '@angular/router';
 import { WarrantyService } from '../core/warranty/warranty.service';
+import { MatDialog } from '@angular/material/dialog';
+import { WarrantyCardComponent } from '../warranty/warranty-card/warranty-card.component';
+import { CustomerCardComponent } from './customer-card/customer-card.component';
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
@@ -46,6 +49,7 @@ export class CustomerComponent implements OnInit, AfterViewInit {
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   constructor(
+    private _dialog: MatDialog,
     private _customerService: CustomerService,
     private _getdearlerService: DealerService,
     private _snackBar: MatSnackBar,
@@ -98,6 +102,9 @@ export class CustomerComponent implements OnInit, AfterViewInit {
   }
   displayFn(value: any) {
     return value.name;
+  }
+  openDetails(row: any) {
+    this._dialog.open(CustomerCardComponent, { data: row._id });
   }
 }
 

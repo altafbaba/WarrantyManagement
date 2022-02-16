@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { DealerService } from '../core/dealer/dealer.service';
+import { DealerCardComponent } from './dealer-card/dealer-card.component';
 import { DealerFormComponent } from './dealer-form/dealer-form.component';
 @Component({
   selector: 'app-dealer',
@@ -29,7 +30,7 @@ export class DealerComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
   openDetails(raw: any) {
-    this._dialog.open(DealerFormComponent, { data: raw._id });
+    this._dialog.open(DealerCardComponent, { data: raw._id });
   }
 }
 

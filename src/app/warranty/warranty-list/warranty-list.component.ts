@@ -40,8 +40,8 @@ export class WarrantyListComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  openDetails(raw: any) {
-    this._dialog.open(WarrantyCardComponent, { data: raw._id });
+  openDetails(row: any) {
+    this._dialog.open(WarrantyCardComponent, { data: row._id });
   }
 }
 
