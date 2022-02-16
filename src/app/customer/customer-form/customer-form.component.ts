@@ -51,7 +51,6 @@ export class CustomerFormComponent implements OnInit {
       });
   }
   displayFn(value: any) {
-    console.log(value);
     return value.name;
   }
 

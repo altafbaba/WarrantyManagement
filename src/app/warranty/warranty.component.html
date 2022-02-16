@@ -1,23 +1,32 @@
-<div class="container mt-4">
-  <h4>Warranty Details</h4>
+<!-- Title -->
+<div
+  class="container mt-4 mb-2"
+  style="display: flex; justify-content: space-between"
+>
+  <h4 style="align-self: center">Warranty Details</h4>
+  <!-- Search Box -->
+  <mat-form-field style="font-size: 12px" appearance="outline">
+    <mat-label>Search</mat-label>
+    <input
+      type="text"
+      placeholder="Search Box"
+      aria-label="Number"
+      matInput
+      [formControl]="searchCtrl"
+      [matAutocomplete]="auto"
+    />
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option
+        *ngFor="let option of filteredOptions | async"
+        [value]="option"
+      >
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
 </div>
 
-<mat-form-field class="example-full-width" appearance="outline">
-  <mat-label>Search</mat-label>
-  <input
-    type="text"
-    placeholder="Search Box"
-    aria-label="Number"
-    matInput
-    [formControl]="searchCtrl"
-    [matAutocomplete]="auto"
-  />
-  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-      {{ option }}
-    </mat-option>
-  </mat-autocomplete>
-</mat-form-field>
-<div class="container mt-4">
+<!-- Table -->
+<div class="container">
   <app-warranty-list [data]="data"></app-warranty-list>
 </div>

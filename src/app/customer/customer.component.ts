@@ -55,8 +55,6 @@ export class CustomerComponent implements OnInit, AfterViewInit {
 
   // If accessing Child COmponent using VIew Child -----> reference should be in AfterViewInit
   ngAfterViewInit(): void {
-    // console.log(this._cusComp.customergroup.value);
-    //for get Dealer for dealer services
     this._getdearlerService.getDealers().subscribe((response: any) => {
       this.data = response.data;
     });
@@ -74,7 +72,6 @@ export class CustomerComponent implements OnInit, AfterViewInit {
     );
     //get dealer form API for DealerNamr
     this._getdearlerService.getDealers().subscribe((_res: any) => {
-      //console.log(_res);
       this.options = _res.data;
     });
     // get customer for Api for table
@@ -93,7 +90,7 @@ export class CustomerComponent implements OnInit, AfterViewInit {
       );
     } else {
       const filterValue = value.toLowerCase();
-      // console.log(filterValue);
+
       return this.options.filter((option: any) =>
         option.name.toLowerCase().includes(filterValue)
       );

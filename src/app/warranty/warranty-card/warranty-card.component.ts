@@ -22,7 +22,6 @@ export class WarrantyCardComponent implements OnInit {
   ngOnInit(): void {
     this._getwrnt.getWarrantybyId(this.data).subscribe((res: any) => {
       this.warrantyData = res.data;
-      console.log(res.data);
     });
   }
 }
