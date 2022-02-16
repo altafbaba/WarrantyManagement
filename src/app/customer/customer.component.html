@@ -1,6 +1,28 @@
 <div class="container mt-4">
   <H4>Customer Details</H4>
 </div>
+
+<mat-form-field class="example-full-width" appearance="outline">
+  <mat-label>Customer Name</mat-label>
+  <input
+    type="text"
+    placeholder="Pick one"
+    aria-label="Number"
+    matInput
+    [formControl]="dealerCtrl"
+    [matAutocomplete]="auto"
+  />
+  <mat-autocomplete
+    autoActiveFirstOption
+    #auto="matAutocomplete"
+    [displayWith]="displayFn"
+  >
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+      {{ option.name }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+
 <div class="mat-elevation-z8 m-4">
   <table mat-table [dataSource]="dataSource">
     <!-- Position Column -->

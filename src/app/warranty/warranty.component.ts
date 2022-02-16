@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DealerService } from '../core/dealer/dealer.service';
 import { WarrantyService } from '../core/warranty/warranty.service';
-
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 @Component({
   selector: 'app-warranty',
   templateUrl: './warranty.component.html',
@@ -10,31 +11,34 @@ import { WarrantyService } from '../core/warranty/warranty.service';
 })
 export class WarrantyComponent implements OnInit {
   data: any[] = [];
+  //auto filed input
+  options: any[] = [];
+  filteredOptions: Observable<string[]>;
+
   constructor(
     private _dealerService: DealerService,
     private _warrantyService: WarrantyService
   ) {}
 
-  warrantygroup: FormGroup = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    contactNo: new FormControl('', [Validators.required]),
-    address1: new FormControl(''),
-    email: new FormControl(''),
-  });
+  searchCtrl: FormControl = new FormControl();
 
   isError: boolean = false;
   ngOnInit(): void {
     this._dealerService.getDealers().subscribe((response: any) => {
       this.data = response.data;
     });
+    //Autocomplete for input
+    this.filteredOptions = this.searchCtrl.valueChanges.pipe(
+      startWith(''),
+      map((value) => this._filter(value))
+    );
   }
-  save() {
-    this._warrantyService.createWarranty(this.warrantygroup.value);
-    // this.warrantygroup.markAllAsTouched();
-    // if (this.warrantygroup.invalid) {
-    //   this.isError = true;
-    //   return;
-    // }
-    // console.log(this.warrantygroup.value);
+  //Autocomplete for input
+  private _filter(value: any): any[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter((option) =>
+      option.toLowerCase().includes(filterValue)
+    );
   }
 }

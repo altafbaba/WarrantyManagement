@@ -82,7 +82,7 @@ export class CustomerComponent implements OnInit, AfterViewInit {
       this.dataSource.data = res.data;
     });
   }
-
+  //Autocomplete for input
   private _filter(value: any): any[] {
     if (typeof value == 'object') {
       const filterValue = value.name.toLowerCase();
@@ -99,31 +99,10 @@ export class CustomerComponent implements OnInit, AfterViewInit {
       );
     }
   }
-
-  // save(): void {
-  //   // this._cusComp.customergroup.markAllAsTouched();
-  //   // // console.log(this._cusComp.customergroup);
-  //   // if (this._cusComp.customergroup.invalid) {
-  //   //   this.isError = true;
-  //   //   return;
-  //   // }
-  //   // console.log(this._cusComp.customergroup.value);
-  //   this._customerService
-  //     .createCustomer(this._cusComp.customergroup.value)
-  //     .subscribe({
-  //       error: (err) => {
-  //         this._snackBar.open(err.message, 'Close')._dismissAfter(3500);
-  //       },
-  //       next: (res) => {
-  //         this._snackBar.open('User Created', 'Close')._dismissAfter(3500);
-  //         this._router.navigateByUrl('/Warranty');
-  //       },
-  //     });
+  displayFn(value: any) {
+    return value.name;
+  }
 }
-//autofiled
-// displayFn(value: any) {
-//   return value.name;
-// }
 
 export interface PeriodicElement {
   position: number;
