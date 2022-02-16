@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { DealerService } from 'src/app/core/dealer/dealer.service';
 
 @Component({
@@ -18,11 +19,17 @@ export class DealerFormComponent implements OnInit {
     pincode: new FormControl(''),
   });
 
-  constructor(private _dealer: DealerService) {}
+  constructor(
+    private _dealer: DealerService,
+    private _ref: MatDialogRef<DealerFormComponent>
+  ) {}
 
   ngOnInit(): void {}
 
   save() {
-    this._dealer.createDealer(this.dealergroup.value);
+    this._dealer.createDealer(this.dealergroup.value).subscribe((response) => {
+      console.log(response);
+      this._ref.close();
+    });
   }
 }

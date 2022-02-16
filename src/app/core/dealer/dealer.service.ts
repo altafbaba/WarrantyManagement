@@ -11,11 +11,7 @@ export class DealerService {
   constructor(private _http: HttpClient, private _route: Router) {}
 
   createDealer(_dealer: any) {
-    this._http
-      .post('http://localhost:8000/vendor', _dealer)
-      .subscribe((response) => {
-        console.log(response);
-      });
+    return this._http.post('http://localhost:8000/vendor', _dealer);
   }
 
   getDealers() {
