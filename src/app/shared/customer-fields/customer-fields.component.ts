@@ -13,7 +13,10 @@ export class CustomerFieldsComponent implements OnInit {
   filteredOptions: Observable<any[]> | undefined;
   //autofiled
   displayFn(value: any) {
-    return value.name;
+    if (typeof value == 'object') {
+      //all input auto file
+      return value.name;
+    } else return value.toLowerCase();
   }
   constructor(private _getcustomer: CustomerService) {}
 
@@ -34,6 +37,7 @@ export class CustomerFieldsComponent implements OnInit {
     if (typeof value == 'object') {
       //all input auto file
       this.customergroup.patchValue(value);
+
       const filterValue = value.name.toLowerCase();
       return this.data.filter((option: any) =>
         option.name.toLowerCase().includes(filterValue)

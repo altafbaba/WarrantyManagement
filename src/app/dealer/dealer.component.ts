@@ -1,27 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { DealerService } from '../core/dealer/dealer.service';
-
 @Component({
   selector: 'app-dealer',
   templateUrl: './dealer.component.html',
   styleUrls: ['./dealer.component.scss'],
 })
 export class DealerComponent implements OnInit {
-  constructor(private _dealer: DealerService) {}
+  displayedColumns: any[] = ['name', 'city', 'address1', 'contactNo'];
+  dataSource = new MatTableDataSource<Dealer>([]);
 
-  dealergroup: FormGroup = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    address1: new FormControl(''),
-    email: new FormControl(''),
-    contactNo: new FormControl(''),
-    state: new FormControl(''),
-    city: new FormControl(''),
-    pincode: new FormControl(''),
-  });
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
+  constructor(private _getDealer: DealerService) {}
   ngOnInit(): void {}
-  save() {
-    this._dealer.createDealer(this.dealergroup.value);
+
+  ngAfterViewInit(): void {
+    //get data from API in Table
+    this._getDealer.getDealers().subscribe((resp: any) => {
+      this.dataSource.data = resp.data;
+    });
+
+    //angular material
+    this.dataSource.paginator = this.paginator;
   }
+}
+
+export interface Dealer {
+  name: string;
 }

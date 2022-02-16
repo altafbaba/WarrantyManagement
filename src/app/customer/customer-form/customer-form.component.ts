@@ -1,11 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { debounceTime, map, Observable } from 'rxjs';
 import { FormControl } from '@angular/forms';
 
 import { CustomerService } from 'src/app/core/customer/customer.service';
 import { CustomerFieldsComponent } from 'src/app/shared/customer-fields/customer-fields.component';
+import { DealerService } from 'src/app/core/dealer/dealer.service';
+import { Dealer } from 'src/app/dealer/dealer.component';
 @Component({
   selector: 'app-customer-form',
   templateUrl: './customer-form.component.html',
@@ -16,18 +18,27 @@ export class CustomerFormComponent implements OnInit {
   dealerCtrl: FormControl = new FormControl('');
   isError: boolean = false;
   //auto complate input fild
-  options: any[] = [];
+  options: Dealer[] = [];
   filteredOptions: Observable<any[]> | undefined;
   constructor(
-    private _customer: CustomerService,
+    private _customerService: CustomerService,
     private _snackBar: MatSnackBar,
-    private _router: Router
+    private _router: Router,
+    private _dealerService: DealerService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._dealerService.getDealers().subscribe((res: any) => {
+      this.options = res.data;
+    });
+    this.filteredOptions = this.dealerCtrl.valueChanges.pipe(
+      // debounceTime(300),
+      map((val) => this._filter(val))
+    );
+  }
   ngAfterViewInit() {}
   save() {
-    this._customer
+    this._customerService
       .createCustomer(this._cusCompt.customergroup.value)
       .subscribe({
         error: (err) => {
@@ -40,6 +51,11 @@ export class CustomerFormComponent implements OnInit {
       });
   }
   displayFn(value: any) {
+    console.log(value);
     return value.name;
+  }
+
+  _filter(search: string) {
+    return this.options.filter((x) => x.name.includes(search));
   }
 }
