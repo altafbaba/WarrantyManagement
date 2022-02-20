@@ -12,20 +12,6 @@ export class CustomerService {
   private _serverUrl = environment.serverUrl;
   constructor(private _http: HttpClient) {}
 
-  // getCustomers() {
-  //   let x: ICustomer = {
-  //     name: '',
-  //     email: '',
-  //     address: '',
-  //     mobile: '',
-  //     state: '',
-  //     city: '',
-  //     zip: '',
-  //   };
-
-  //   return x;
-  // }
-
   createCustomer(_customer: any) {
     let url = `${this._serverUrl}/vendor`;
 
@@ -34,5 +20,8 @@ export class CustomerService {
   getCustomers() {
     let url = `${this._serverUrl}/vendor`;
     return this._http.get(url);
+  }
+  getCustomerbyId(customerId: string) {
+    return this._http.get('http://localhost:8000/vendor/' + customerId);
   }
 }

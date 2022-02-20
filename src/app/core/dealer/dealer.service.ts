@@ -16,8 +16,9 @@ export class DealerService {
 
   getDealers() {
     return this._http.get('http://localhost:8000/vendor');
-    // .subscribe((response) => {
-    //   console.log(response);
-    // });
+  }
+
+  getDealerbyId(dealerId: string) {
+    return this._http.get('http://localhost:8000/vendor/' + dealerId);
   }
 }

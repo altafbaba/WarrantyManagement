@@ -1,1 +1,25 @@
-<p>dealer-card works!</p>
+<h1 mat-dialog-title>Warranty Detail</h1>
+<div mat-dialog-content>
+  <mat-card style="margin: 10px">
+    Customer Name {{ dealerData?.name }} Mobile No {{ dealerData?.city }} Email
+    Id {{ dealerData?.city }}
+  </mat-card>
+  <mat-card style="margin: 10px">
+    Address
+    {{ dealerData?.city }}State {{ dealerData?.city }} City{{
+      dealerData?.city
+    }}
+    PinCode
+    {{ dealerData?.city }}
+  </mat-card>
+  <mat-card style="margin: 10px">
+    Product {{ dealerData?.city }} Model {{ dealerData?.city }}
+    <p>
+      Warranty Start Date {{ dealerData?.city }} Warranty End Date
+      {{ dealerData?.city }}
+    </p>
+  </mat-card>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>
