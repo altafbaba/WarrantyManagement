@@ -72,13 +72,22 @@ const routes: Routes = [
           ),
       },
 
-      // {
-      //   path: 'dealer-form',
-      //   loadChildren: () =>
-      //     import('./dealer/dealer-form/dealer-form.component').then(
-      //       (x) => x.DealerFormComponent
-      //     ),
-      // },
+      {
+        path: 'dealer-card',
+
+        loadChildren: () =>
+          import('./dealer/dealer-card/dealer-card.component').then(
+            (x) => x.DealerCardComponent
+          ),
+      },
+
+      {
+        path: 'dealer-form',
+        loadChildren: () =>
+          import('./dealer/dealer-form/dealer-form.component').then(
+            (x) => x.DealerFormComponent
+          ),
+      },
     ],
   },
 ];

@@ -1,29 +1,35 @@
-<div class="container mt-4">
-  <H4>Customer Details</H4>
+<!-- Title -->
+<div
+  class="container mt-4 mb-2"
+  style="display: flex; justify-content: space-between"
+>
+  <H4 style="align-self: center">Customer Details</H4>
+  <!-- Search Box -->
+  <mat-form-field style="font-size: 12px" appearance="outline">
+    <mat-label>Search</mat-label>
+    <input
+      type="text"
+      placeholder="Search Box"
+      aria-label="Number"
+      matInput
+      [formControl]="dealerCtrl"
+      [matAutocomplete]="auto"
+    />
+    <mat-autocomplete
+      autoActiveFirstOption
+      #auto="matAutocomplete"
+      [displayWith]="displayFn"
+    >
+      <mat-option
+        *ngFor="let option of filteredOptions | async"
+        [value]="option"
+      >
+        {{ option.name }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
 </div>
-
-<mat-form-field class="example-full-width" appearance="outline">
-  <mat-label>Customer Name</mat-label>
-  <input
-    type="text"
-    placeholder="Pick one"
-    aria-label="Number"
-    matInput
-    [formControl]="dealerCtrl"
-    [matAutocomplete]="auto"
-  />
-  <mat-autocomplete
-    autoActiveFirstOption
-    #auto="matAutocomplete"
-    [displayWith]="displayFn"
-  >
-    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-      {{ option.name }}
-    </mat-option>
-  </mat-autocomplete>
-</mat-form-field>
-
-<div class="mat-elevation-z8 m-4">
+<div class="mat-elevation-z8" style="margin-left: 25px; margin-right: 25px">
   <table mat-table [dataSource]="dataSource">
     <!-- Position Column -->
     <ng-container matColumnDef="position">

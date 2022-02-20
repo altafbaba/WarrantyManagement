@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DealerService } from '../core/dealer/dealer.service';
-import { WarrantyService } from '../core/warranty/warranty.service';
+
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 @Component({
@@ -15,10 +15,7 @@ export class WarrantyComponent implements OnInit {
   options: any[] = [];
   filteredOptions: Observable<string[]>;
 
-  constructor(
-    private _dealerService: DealerService,
-    private _warrantyService: WarrantyService
-  ) {}
+  constructor(private _dealerService: DealerService) {}
 
   searchCtrl: FormControl = new FormControl();
 
@@ -30,7 +27,9 @@ export class WarrantyComponent implements OnInit {
     //Autocomplete for input
     this.filteredOptions = this.searchCtrl.valueChanges.pipe(
       startWith(''),
-      map((value) => this._filter(value))
+      map((value) => {
+        return this._filter(value);
+      })
     );
   }
   //Autocomplete for input
@@ -40,5 +39,9 @@ export class WarrantyComponent implements OnInit {
     return this.options.filter((option) =>
       option.toLowerCase().includes(filterValue)
     );
+  }
+
+  displayFn(value: any) {
+    if (value) return value.name;
   }
 }

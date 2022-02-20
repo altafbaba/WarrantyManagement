@@ -19,17 +19,13 @@ export class DealerFormComponent implements OnInit {
     pincode: new FormControl(''),
   });
 
-  constructor(
-    private _dealer: DealerService,
-    private _ref: MatDialogRef<DealerFormComponent>
-  ) {}
+  constructor(private _dealer: DealerService) {}
 
   ngOnInit(): void {}
 
   save() {
     this._dealer.createDealer(this.dealergroup.value).subscribe((response) => {
       console.log(response);
-      this._ref.close();
     });
   }
 }

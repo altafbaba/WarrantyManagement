@@ -4,7 +4,7 @@
   style="display: flex; justify-content: space-between"
 >
   <h4 style="align-self: center">Warranty Details</h4>
-  <!-- Search Box -->
+
   <mat-form-field style="font-size: 12px" appearance="outline">
     <mat-label>Search</mat-label>
     <input
@@ -15,7 +15,11 @@
       [formControl]="searchCtrl"
       [matAutocomplete]="auto"
     />
-    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+    <mat-autocomplete
+      autoActiveFirstOption
+      #auto="matAutocomplete"
+      [displayWith]="displayFn"
+    >
       <mat-option
         *ngFor="let option of filteredOptions | async"
         [value]="option"

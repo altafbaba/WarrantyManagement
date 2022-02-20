@@ -16,6 +16,11 @@ const dealerRoutess: Routes = [
     path: 'dealer-form',
     component: DealerFormComponent,
   },
+
+  {
+    path: 'dealr-card',
+    component: DealerCardComponent,
+  },
 ];
 
 @NgModule({

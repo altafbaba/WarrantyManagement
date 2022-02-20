@@ -1,8 +1,23 @@
-<div class="container mt-4">
-  <H4>Dealer Details</H4>
+<div
+  class="container mt-4 mb-2"
+  style="display: flex; justify-content: space-between"
+>
+  <H4 style="align-self: center">Dealer Details</H4>
+  <mat-form-field style="font-size: 12px" appearance="outline">
+    <mat-label>Search</mat-label>
+    <input type="text" placeholder="Search Box" aria-label="Number" matInput />
+    <!-- <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option
+        *ngFor="let option of filteredOptions | async"
+        [value]="option"
+      >
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete> -->
+  </mat-form-field>
 </div>
 
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8 mt-4">
   <table mat-table [dataSource]="dataSource">
     <!-- Position Column -->
     <ng-container matColumnDef="name">

@@ -19,7 +19,11 @@ const customerRoutes: Routes = [
   },
 ];
 @NgModule({
-  declarations: [CustomerComponent, CustomerFormComponent, CustomerCardComponent],
+  declarations: [
+    CustomerComponent,
+    CustomerFormComponent,
+    CustomerCardComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
