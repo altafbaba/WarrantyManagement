@@ -1,6 +1,6 @@
 <!-- Title -->
 <div
-  class="container mt-4 mb-2"
+  class="container mt-4 mb-2 ; fontpop"
   style="display: flex; justify-content: space-between"
 >
   <h4 style="align-self: center">Warranty Details</h4>
@@ -13,24 +13,11 @@
       aria-label="Number"
       matInput
       [formControl]="searchCtrl"
-      [matAutocomplete]="auto"
     />
-    <mat-autocomplete
-      autoActiveFirstOption
-      #auto="matAutocomplete"
-      [displayWith]="displayFn"
-    >
-      <mat-option
-        *ngFor="let option of filteredOptions | async"
-        [value]="option"
-      >
-        {{ option }}
-      </mat-option>
-    </mat-autocomplete>
   </mat-form-field>
 </div>
 
 <!-- Table -->
-<div class="container">
+<div class="container fontpop">
   <app-warranty-list [data]="data"></app-warranty-list>
 </div>

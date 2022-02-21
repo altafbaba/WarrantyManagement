@@ -1,11 +1,29 @@
 <div [formGroup]="signgroup">
-  <mat-card>
-    <mat-form-field class="example-full-width" appearance="outline">
+  <mat-card style="margin-top: 20px">
+    <h1>welcome</h1>
+  </mat-card>
+  <mat-card
+    style="
+      display: flex;
+      margin-top: 200px;
+      margin-right: 100px;
+      margin-left: 100px;
+    "
+  >
+    <mat-form-field
+      class="example-full-width"
+      appearance="outline"
+      style="padding: 40px"
+    >
       <mat-label>Email Id</mat-label>
       <input matInput placeholder="Email Id" value="" formControlName="email" />
     </mat-form-field>
 
-    <mat-form-field class="example-full-width" appearance="outline">
+    <mat-form-field
+      class="example-full-width"
+      appearance="outline"
+      style="padding: 40px"
+    >
       <mat-label>Password</mat-label>
       <input
         matInput

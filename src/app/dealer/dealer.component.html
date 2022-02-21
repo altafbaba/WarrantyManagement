@@ -1,46 +1,51 @@
 <div
-  class="container mt-4 mb-2"
+  class="container mt-4 mb-2 fontpop"
   style="display: flex; justify-content: space-between"
 >
   <H4 style="align-self: center">Dealer Details</H4>
   <mat-form-field style="font-size: 12px" appearance="outline">
     <mat-label>Search</mat-label>
-    <input type="text" placeholder="Search Box" aria-label="Number" matInput />
-    <!-- <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option
-        *ngFor="let option of filteredOptions | async"
-        [value]="option"
-      >
-        {{ option }}
-      </mat-option>
-    </mat-autocomplete> -->
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Ex. ium"
+      #input
+    />
   </mat-form-field>
 </div>
 
-<div class="mat-elevation-z8 mt-4">
+<div
+  class="mat-elevation-z8 fontpop"
+  style="margin-right: 25px; margin-left: 25px"
+>
   <table mat-table [dataSource]="dataSource">
     <!-- Position Column -->
-    <ng-container matColumnDef="name">
+    <ng-container matColumnDef="no">
       <th mat-header-cell *matHeaderCellDef>No.</th>
-      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      <td mat-cell *matCellDef="let element">{{ element._id }}</td>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="city">
+    <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let element">{{ element.city }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
     </ng-container>
 
     <!-- Weight Column -->
     <ng-container matColumnDef="address1">
-      <th mat-header-cell *matHeaderCellDef>Weight</th>
+      <th mat-header-cell *matHeaderCellDef>Mobile No</th>
       <td mat-cell *matCellDef="let element">{{ element.contactNo }}</td>
     </ng-container>
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="contactNo">
-      <th mat-header-cell *matHeaderCellDef>Symbol</th>
+      <th mat-header-cell *matHeaderCellDef>State</th>
       <td mat-cell *matCellDef="let element">{{ element._id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef>City</th>
+      <td mat-cell *matCellDef="let element">{{ element.city }}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

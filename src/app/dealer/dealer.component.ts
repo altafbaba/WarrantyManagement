@@ -12,7 +12,7 @@ import { DealerFormComponent } from './dealer-form/dealer-form.component';
   styleUrls: ['./dealer.component.scss'],
 })
 export class DealerComponent implements OnInit {
-  displayedColumns: any[] = ['name', 'city', 'address1', 'contactNo'];
+  displayedColumns: any[] = ['no', 'name', 'city', 'address1', 'contactNo'];
   dataSource = new MatTableDataSource<Dealer>([]);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -29,8 +29,15 @@ export class DealerComponent implements OnInit {
     //angular material
     this.dataSource.paginator = this.paginator;
   }
+  //open dilogbox for table
   openDetails(raw: any) {
     this._dialog.open(DealerCardComponent, { data: raw._id });
+  }
+
+  //search box
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }
 
