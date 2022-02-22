@@ -17,31 +17,14 @@ export class WarrantyComponent implements OnInit {
 
   constructor(private _dealerService: DealerService) {}
 
-  searchCtrl: FormControl = new FormControl();
-
   isError: boolean = false;
   ngOnInit(): void {
     this._dealerService.getDealers().subscribe((response: any) => {
       this.data = response.data;
     });
-    //Autocomplete for input
-    this.filteredOptions = this.searchCtrl.valueChanges.pipe(
-      startWith(''),
-      map((value) => {
-        return this._filter(value);
-      })
-    );
   }
-  //Autocomplete for input
-  private _filter(value: any): any[] {
-    const filterValue = value.toLowerCase();
-
-    return this.options.filter((option) =>
-      option.toLowerCase().includes(filterValue)
-    );
-  }
-
-  displayFn(value: any) {
-    if (value) return value.name;
-  }
+  // applyFilter(event: Event) {
+  //     const filterValue = (event.target as HTMLInputElement).value;
+  //     this.data.filter = filterValue.trim().toLowerCase();
+  //   }
 }

@@ -12,7 +12,15 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = [
+    'position',
+    'vName',
+    'name',
+    'contactNo',
+    'state',
+    'city',
+    'status',
+  ];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -33,5 +41,12 @@ export interface PeriodicElement {
   position: number;
   weight: number;
   symbol: string;
+
+  vName: string;
+
+  contactNo: number;
+  state: string;
+  city: string;
+  status: string;
 }
 const ELEMENT_DATA: PeriodicElement[] = [];

@@ -36,15 +36,14 @@ export class CustomerComponent implements OnInit, AfterViewInit {
   //auto complate input fild
   options: any[] = [];
   filteredOptions: Observable<any[]> | undefined;
-  dealerCtrl: FormControl = new FormControl('');
+
   displayedColumns: any[] = [
     'position',
+    'vName',
     'name',
     'contactNo',
-    'product',
-    'model',
-    'wsdate',
-    'wedate',
+    'state',
+    'city',
   ];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
@@ -68,12 +67,6 @@ export class CustomerComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.filteredOptions = this.dealerCtrl.valueChanges.pipe(
-      startWith(''),
-      map((value) => {
-        return this._filter(value);
-      })
-    );
     //get dealer form API for DealerNamr
     this._getdearlerService.getDealers().subscribe((_res: any) => {
       this.options = _res.data;
@@ -83,26 +76,13 @@ export class CustomerComponent implements OnInit, AfterViewInit {
       this.dataSource.data = res.data;
     });
   }
-  //Autocomplete for input
-  private _filter(value: any): any[] {
-    if (typeof value == 'object') {
-      const filterValue = value.name.toLowerCase();
-      //customer auto flied
-      this._cusComp.customergroup.patchValue(value);
-      return this.options.filter((option: any) =>
-        option.name.toLowerCase().includes(filterValue)
-      );
-    } else {
-      const filterValue = value.toLowerCase();
 
-      return this.options.filter((option: any) =>
-        option.name.toLowerCase().includes(filterValue)
-      );
-    }
+  //search box input
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  displayFn(value: any) {
-    return value.name;
-  }
+  //table open dilogbox
   openDetails(row: any) {
     this._dialog.open(CustomerCardComponent, { data: row._id });
   }

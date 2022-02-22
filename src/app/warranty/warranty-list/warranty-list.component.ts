@@ -20,8 +20,8 @@ export class WarrantyListComponent implements OnInit {
     'contactNo',
     'product',
     'model',
-    'wsdate',
-    'wedate',
+    'srNo',
+    'status',
   ];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 

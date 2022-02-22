@@ -8,25 +8,12 @@
   <mat-form-field style="font-size: 12px" appearance="outline">
     <mat-label>Search</mat-label>
     <input
-      type="text"
-      placeholder="Search Box"
-      aria-label="Number"
+      input
       matInput
-      [formControl]="dealerCtrl"
-      [matAutocomplete]="auto"
+      (keyup)="applyFilter($event)"
+      placeholder="Ex. ium"
+      #input
     />
-    <mat-autocomplete
-      autoActiveFirstOption
-      #auto="matAutocomplete"
-      [displayWith]="displayFn"
-    >
-      <mat-option
-        *ngFor="let option of filteredOptions | async"
-        [value]="option"
-      >
-        {{ option.name }}
-      </mat-option>
-    </mat-autocomplete>
   </mat-form-field>
 </div>
 <div class="mat-elevation-z8" style="margin-left: 25px; margin-right: 25px">
@@ -35,6 +22,11 @@
     <ng-container matColumnDef="position">
       <th mat-header-cell *matHeaderCellDef>No.</th>
       <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="vName">
+      <th mat-header-cell *matHeaderCellDef>Vendor Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.vName }}</td>
     </ng-container>
 
     <!-- Name Column -->
@@ -59,13 +51,13 @@
       <th mat-header-cell *matHeaderCellDef>Model</th>
       <td mat-cell *matCellDef="let element">{{ element.model }}</td>
     </ng-container>
-    <ng-container matColumnDef="wsdate">
+    <ng-container matColumnDef="state">
       <th mat-header-cell *matHeaderCellDef>State</th>
-      <td mat-cell *matCellDef="let element">{{ element.wsdate }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.state }}</td>
     </ng-container>
-    <ng-container matColumnDef="wedate">
+    <ng-container matColumnDef="city">
       <th mat-header-cell *matHeaderCellDef>City</th>
-      <td mat-cell *matCellDef="let element">{{ element.wedate }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.city }}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
