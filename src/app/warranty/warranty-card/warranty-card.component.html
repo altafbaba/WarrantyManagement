@@ -2,7 +2,7 @@
 <div mat-dialog-content>
   <mat-card style="margin: 10px">
     Customer Name {{ warrantyData?.name }} Mobile No
-    {{ warrantyData?.city }} Email Id {{ warrantyData?.city }}
+    {{ warrantyData?.city }} Email Id {{ warrantyData?.email }}
   </mat-card>
   <mat-card style="margin: 10px">
     Address
@@ -13,10 +13,10 @@
     {{ warrantyData?.city }}
   </mat-card>
   <mat-card style="margin: 10px">
-    Product {{ warrantyData?.city }} Model {{ warrantyData?.city }}
+    Product {{ warrantyData?.product }} Model {{ warrantyData?.modelNo }}
     <p>
-      Warranty Start Date {{ warrantyData?.city }} Warranty End Date
-      {{ warrantyData?.city }}
+      Warranty Start Date {{ warrantyData?.startDate }} Warranty End Date
+      {{ warrantyData?.endDate }}
     </p>
   </mat-card>
 </div>

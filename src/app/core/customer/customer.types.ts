@@ -1,8 +1,8 @@
 export interface ICustomer {
   name: string;
-  address: string;
-  email?: string;
   mobile: string;
+  email?: string;
+  address: string;
   state: string;
   city: string;
   pincode: number;

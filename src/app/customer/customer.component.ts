@@ -20,6 +20,7 @@ import { WarrantyService } from '../core/warranty/warranty.service';
 import { MatDialog } from '@angular/material/dialog';
 import { WarrantyCardComponent } from '../warranty/warranty-card/warranty-card.component';
 import { CustomerCardComponent } from './customer-card/customer-card.component';
+import { ICustomer } from '../core/customer/customer.types';
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
@@ -45,7 +46,7 @@ export class CustomerComponent implements OnInit, AfterViewInit {
     'state',
     'city',
   ];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  dataSource = new MatTableDataSource<ICustomer>([]);
 
   constructor(
     private _dialog: MatDialog,
@@ -88,13 +89,13 @@ export class CustomerComponent implements OnInit, AfterViewInit {
   }
 }
 
-export interface PeriodicElement {
-  position: number;
-  name: string;
-  contactNo: number;
-  product: string;
-  model: string;
-  wsdate: string;
-  wedate: string;
-}
-const ELEMENT_DATA: PeriodicElement[] = [];
+// export interface PeriodicElement {
+//   position: number;
+//   name: string;
+//   contactNo: number;
+//   product: string;
+//   model: string;
+//   wsdate: string;
+//   wedate: string;
+// }
+// const ELEMENT_DATA: PeriodicElement[] = [];

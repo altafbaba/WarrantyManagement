@@ -24,15 +24,20 @@
   </div>
   <div class="row">
     <mat-form-field class="col" appearance="outline">
+      <mat-label>WSR No</mat-label>
+      <input matInput formControlName="contactNo" />
+    </mat-form-field>
+
+    <mat-form-field class="col" appearance="outline">
       <mat-label>Warranty Start Date</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="address1" />
+      <input matInput [matDatepicker]="picker" formControlName="startDate" />
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker touchUi #picker></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field class="col" appearance="outline">
       <mat-label>Warranty End Date</mat-label>
-      <input matInput [matDatepicker]="picker2" formControlName="address1" />
+      <input matInput [matDatepicker]="picker2" formControlName="endDate" />
       <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
       <mat-datepicker touchUi #picker2></mat-datepicker>
     </mat-form-field>

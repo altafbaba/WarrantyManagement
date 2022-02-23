@@ -1,21 +1,28 @@
-<div [formGroup]="signgroup">
-  <div>
-    <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>Email Id</mat-label>
-      <input matInput placeholder="Email Id" value="" formControlName="email" />
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>Password</mat-label>
-      <input
-        matInput
-        placeholder="Password"
-        value=" "
-        type="password"
-        formControlName="password"
-      />
-    </mat-form-field>
-  </div>
-  <button mat-raised-button color="primary" (click)="login()">Login</button>
-</div>
+<mat-card style="display: flex">
+  <div [formGroup]="signgroup">
+    <div>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Email Id</mat-label>
+        <input
+          matInput
+          placeholder="Email Id"
+          value=""
+          formControlName="email"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Password"
+          value=" "
+          type="password"
+          formControlName="password"
+        />
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" (click)="login()">Login</button>
+  </div></mat-card
+>

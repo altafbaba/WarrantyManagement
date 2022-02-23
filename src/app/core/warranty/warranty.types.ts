@@ -7,7 +7,9 @@ export interface IWarranty {
   city: string;
   pincode: number;
   product: string;
-  modelno: string;
-  wsdate: string;
-  wedate: string;
+  modelNo: string;
+  startDate: string;
+  endDate: string;
+  wsrNo: string;
+  serialNo: string;
 }

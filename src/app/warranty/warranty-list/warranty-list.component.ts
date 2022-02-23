@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { WarrantyService } from 'src/app/core/warranty/warranty.service';
 import { MatDialog } from '@angular/material/dialog';
 import { WarrantyCardComponent } from '../warranty-card/warranty-card.component';
+import { IWarranty } from 'src/app/core/warranty/warranty.types';
 @Component({
   selector: 'app-warranty-list',
   templateUrl: './warranty-list.component.html',
@@ -19,11 +20,11 @@ export class WarrantyListComponent implements OnInit {
     'name',
     'contactNo',
     'product',
-    'model',
+    'modelNo',
     'srNo',
     'status',
   ];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  dataSource = new MatTableDataSource<IWarranty>([]);
 
   constructor(
     private _dealerService: DealerService,
@@ -45,13 +46,13 @@ export class WarrantyListComponent implements OnInit {
   }
 }
 
-export interface PeriodicElement {
-  position: number;
-  name: string;
-  contactNo: number;
-  product: string;
-  model: string;
-  wsdate: string;
-  wedate: string;
-}
-const ELEMENT_DATA: PeriodicElement[] = [];
+// export interface PeriodicElement {
+//   position: number;
+//   name: string;
+//   contactNo: number;
+//   product: string;
+//   model: string;
+//   wsdate: string;
+//   wedate: string;
+// }
+// const ELEMENT_DATA: PeriodicElement[] = [];

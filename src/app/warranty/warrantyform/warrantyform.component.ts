@@ -18,7 +18,9 @@ export class WarrantyformComponent implements OnInit {
   warrantygroup: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required]),
     contactNo: new FormControl('', [Validators.required]),
-    address1: new FormControl(''),
-    email: new FormControl(''),
+    product: new FormControl('', [Validators.required]),
+    modelNo: new FormControl('', [Validators.required]),
+    endDate: new FormControl('', [Validators.required]),
+    startDate: new FormControl('', [Validators.required]),
   });
 }
