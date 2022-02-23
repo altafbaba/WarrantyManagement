@@ -1,17 +1,25 @@
+<div>
+  <h3>Dashboard</h3>
+</div>
 <!-- card for details -->
-<div style="display: flex; justify-content: space-between; margin: 50px">
+<div class="row" style="margin: 30px">
   <app-dashboard-card
+    class="col"
     title="Dealer "
     [count]="data?.assets.assetStatusCount.IN_POOL"
   >
   </app-dashboard-card>
   <app-dashboard-card
+    class="col"
     title="Customer "
     [count]="data?.users.totalUsers"
   ></app-dashboard-card>
-  <app-dashboard-card title="Warranty Exp."></app-dashboard-card>
+  <app-dashboard-card class="col" title="Warranty Exp."></app-dashboard-card>
 
-  <app-dashboard-card title="Already Exp. Warranty  "></app-dashboard-card>
+  <app-dashboard-card
+    class="col"
+    title="Already Exp. Warranty  "
+  ></app-dashboard-card>
 </div>
 
 <h4>Warranty Exp.Customer List</h4>

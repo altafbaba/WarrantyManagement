@@ -10,16 +10,16 @@ export class WarrantyService {
 
   createWarranty(_warranty: any) {
     this._http
-      .post('http://localhost:8000/vendor', _warranty)
+      .post('http://localhost:3000/warranty', _warranty)
       .subscribe((Response) => {
         console.log(Response);
       });
   }
 
   getWarranty() {
-    return this._http.get('http://localhost:8000/vendor');
+    return this._http.get('http://localhost:3000/warranty');
   }
   getWarrantybyId(warrantyId: string) {
-    return this._http.get('http://localhost:8000/vendor/' + warrantyId);
+    return this._http.get('http://localhost:3000/warranty/' + warrantyId);
   }
 }
