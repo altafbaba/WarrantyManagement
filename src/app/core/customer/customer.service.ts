@@ -13,7 +13,7 @@ export class CustomerService {
   constructor(private _http: HttpClient) {}
 
   createCustomer(_customer: any) {
-    let url = `${this._serverUrl}/vendor`;
+    let url = `${this._serverUrl}/warranty`;
 
     return this._http.post(url, _customer);
   }

@@ -88,14 +88,3 @@ export class CustomerComponent implements OnInit, AfterViewInit {
     this._dialog.open(CustomerCardComponent, { data: row._id });
   }
 }
-
-// export interface PeriodicElement {
-//   position: number;
-//   name: string;
-//   contactNo: number;
-//   product: string;
-//   model: string;
-//   wsdate: string;
-//   wedate: string;
-// }
-// const ELEMENT_DATA: PeriodicElement[] = [];

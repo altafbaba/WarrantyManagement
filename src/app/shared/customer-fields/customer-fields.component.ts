@@ -52,13 +52,13 @@ export class CustomerFieldsComponent implements OnInit {
   }
 
   customergroup: FormGroup = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    //date: new FormControl(''),
-    address1: new FormControl(''),
-    email: new FormControl(''),
-    contactNo: new FormControl(''),
-    state: new FormControl(''),
-    city: new FormControl(''),
-    zip: new FormControl(''),
+    name: new FormControl('abc', [Validators.required]),
+
+    address: new FormControl('aasdd'),
+    email: new FormControl('a@a.com'),
+    contactNo: new FormControl('1234567809'),
+    state: new FormControl('gj'),
+    city: new FormControl('ahm'),
+    pincode: new FormControl('123456'),
   });
 }
