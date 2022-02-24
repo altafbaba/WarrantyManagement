@@ -11,20 +11,13 @@ import { map, startWith } from 'rxjs/operators';
 })
 export class WarrantyComponent implements OnInit {
   data: any[] = [];
-  //auto filed input
-  options: any[] = [];
-  filteredOptions: Observable<string[]>;
+  isError: boolean = false;
 
   constructor(private _dealerService: DealerService) {}
 
-  isError: boolean = false;
   ngOnInit(): void {
     this._dealerService.getDealers().subscribe((response: any) => {
       this.data = response.data;
     });
   }
-  // applyFilter(event: Event) {
-  //     const filterValue = (event.target as HTMLInputElement).value;
-  //     this.data.filter = filterValue.trim().toLowerCase();
-  //   }
 }

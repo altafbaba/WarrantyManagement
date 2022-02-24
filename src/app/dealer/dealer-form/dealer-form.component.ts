@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { DealerService } from 'src/app/core/dealer/dealer.service';
 
 @Component({
@@ -19,13 +21,23 @@ export class DealerFormComponent implements OnInit {
     pincode: new FormControl(''),
   });
 
-  constructor(private _dealer: DealerService) {}
+  constructor(
+    private _dealer: DealerService,
+    private _snackBar: MatSnackBar,
+    private _router: Router
+  ) {}
 
   ngOnInit(): void {}
 
   save() {
-    this._dealer.createDealer(this.dealergroup.value).subscribe((response) => {
-      console.log(response);
+    this._dealer.createDealer(this.dealergroup.value).subscribe({
+      error: (err) => {
+        this._snackBar.open(err.message, 'Close')._dismissAfter(3500);
+      },
+      next: (res) => {
+        this._snackBar.open('User Created', 'Close')._dismissAfter(3500);
+        this._router.navigateByUrl('/Dealer');
+      },
     });
   }
 }

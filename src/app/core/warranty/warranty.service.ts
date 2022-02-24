@@ -9,11 +9,7 @@ export class WarrantyService {
   constructor(private _http: HttpClient) {}
 
   createWarranty(_warranty: any) {
-    this._http
-      .post('http://localhost:3000/warranty', _warranty)
-      .subscribe((Response) => {
-        console.log(Response);
-      });
+    return this._http.post('http://localhost:3000/warranty', _warranty);
   }
 
   getWarranty() {

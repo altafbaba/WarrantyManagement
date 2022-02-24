@@ -24,11 +24,11 @@
 
 <h4>Warranty Exp.Customer List</h4>
 <!-- Table for warrty exp list -->
-<div class="mat-elevation-z8 fontpop ;fontpop">
+<div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource">
     <!-- Position Column -->
     <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <th mat-header-cell *matHeaderCellDef color="primary">No.</th>
       <td mat-cell *matCellDef="let element">{{ element.position }}</td>
     </ng-container>
 
