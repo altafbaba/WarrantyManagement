@@ -11,14 +11,17 @@ export class DealerService {
   constructor(private _http: HttpClient, private _route: Router) {}
 
   createDealer(_dealer: any) {
-    return this._http.post('http://localhost:8000/vendor', _dealer);
+    let url = `${this._serverUrl}/dealer`;
+    return this._http.post(url, _dealer);
   }
 
   getDealers() {
-    return this._http.get('http://localhost:8000/vendor');
+    let url = `${this._serverUrl}/dealer`;
+    return this._http.get(url);
   }
 
   getDealerbyId(dealerId: string) {
-    return this._http.get('http://localhost:8000/vendor/' + dealerId);
+    let url = `${this._serverUrl}/dealer`;
+    return this._http.get(url + dealerId);
   }
 }

@@ -15,11 +15,12 @@
   <mat-card style="margin: 10px">
     Product {{ warrantyData?.product }} Model {{ warrantyData?.modelNo }}
     <p>
-      Warranty Start Date {{ warrantyData?.startDate }} Warranty End Date
-      {{ warrantyData?.endDate }}
+      Warranty Start Date {{ warrantyData?.startDate | date }} Warranty End Date
+      {{ warrantyData?.endDate | date }}
     </p>
   </mat-card>
 </div>
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Close</button>
+  <button mat-button mat-dialog (click)="warrantyClam()">Warranty Clam</button>
 </div>

@@ -1,21 +1,26 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WarrantyService {
+  private _serverUrl = environment.serverUrl;
   constructor(private _http: HttpClient) {}
 
   createWarranty(_warranty: any) {
-    return this._http.post('http://localhost:3000/warranty', _warranty);
+    let url = `${this._serverUrl}/warranty`;
+    return this._http.post(url, _warranty);
   }
 
   getWarranty() {
-    return this._http.get('http://localhost:3000/warranty');
+    let url = `${this._serverUrl}/warranty`;
+    return this._http.get(url);
   }
   getWarrantybyId(warrantyId: string) {
-    return this._http.get('http://localhost:3000/warranty/' + warrantyId);
+    let url = `${this._serverUrl}/warranty`;
+    return this._http.get(url + warrantyId);
   }
 }

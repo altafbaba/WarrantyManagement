@@ -12,7 +12,7 @@ export class CustomerService {
   private _serverUrl = environment.serverUrl;
   constructor(private _http: HttpClient) {}
 
-  createCustomer(_customer: any) {
+  createCustomer(_customer: ICustomer) {
     let url = `${this._serverUrl}/warranty`;
 
     return this._http.post(url, _customer);
@@ -22,6 +22,7 @@ export class CustomerService {
     return this._http.get(url);
   }
   getCustomerbyId(customerId: string) {
-    return this._http.get('http://localhost:8000/vendor/' + customerId);
+    let url = `${this._serverUrl}/vendor`;
+    return this._http.get(url + customerId);
   }
 }

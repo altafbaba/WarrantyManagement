@@ -4,6 +4,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CustomerFieldsComponent } from 'src/app/shared/customer-fields/customer-fields.component';
+import { error } from '@angular/compiler/src/util';
+
 @Component({
   selector: 'app-warrantyform',
   templateUrl: './warrantyform.component.html',
@@ -18,7 +20,6 @@ export class WarrantyformComponent implements OnInit {
     private _router: Router
   ) {}
   warrantygroup: FormGroup = new FormGroup({
-    //name: new FormControl('name', [Validators.required]),
     contactNo: new FormControl('1231231230', [Validators.required]),
     product: new FormControl('tv', [Validators.required]),
     modelNo: new FormControl('qweasd', [Validators.required]),
@@ -28,14 +29,20 @@ export class WarrantyformComponent implements OnInit {
   ngOnInit(): void {}
 
   save() {
-    console.log(this.warrantygroup.value);
-    console.log(this._custm.customergroup.value);
-
     let wrnty = {
       ...this.warrantygroup.value,
       ...this._custm.customergroup.value,
     };
     console.log(wrnty);
+
+    this._warrantyService.createWarranty(wrnty).subscribe((resp) => {
+      this._custm.customergroup.value;
+    });
+
+    this._snackBar.open('Warranty Created', 'Close')._dismissAfter(3000);
+
+    this._router.navigateByUrl('/Warranty');
+
     // this._warrantyService
     //   .createWarranty(this.warrantygroup.value)
     //   .subscribe((res) => {
