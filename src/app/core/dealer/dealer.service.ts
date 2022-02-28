@@ -16,12 +16,12 @@ export class DealerService {
   }
 
   getDealers() {
-    let url = `${this._serverUrl}/dealer`;
+    let url = `${this._serverUrl}/warranty`;
     return this._http.get(url);
   }
 
   getDealerbyId(dealerId: string) {
-    let url = `${this._serverUrl}/dealer`;
+    let url = `${this._serverUrl}/warranty/`;
     return this._http.get(url + dealerId);
   }
 }

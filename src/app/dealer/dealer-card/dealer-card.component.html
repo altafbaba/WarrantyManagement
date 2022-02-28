@@ -1,25 +1,35 @@
 <h1 mat-dialog-title>Warranty Detail</h1>
-<div mat-dialog-content>
-  <mat-card style="margin: 10px">
-    Customer Name {{ dealerData?.name }} Mobile No {{ dealerData?.city }} Email
-    Id {{ dealerData?.city }}
-  </mat-card>
-  <mat-card style="margin: 10px">
-    Address
-    {{ dealerData?.city }}State {{ dealerData?.city }} City{{
-      dealerData?.city
-    }}
-    PinCode
-    {{ dealerData?.city }}
-  </mat-card>
-  <mat-card style="margin: 10px">
-    Product {{ dealerData?.city }} Model {{ dealerData?.city }}
-    <p>
-      Warranty Start Date {{ dealerData?.city }} Warranty End Date
-      {{ dealerData?.city }}
-    </p>
-  </mat-card>
-</div>
+<table style="width: 600px">
+  <tr>
+    <td>Customer Name</td>
+    <td>{{ dealerData?.name }}</td>
+  </tr>
+  <tr>
+    <td>Mobile No</td>
+    <td>{{ dealerData?.name }}</td>
+  </tr>
+  <tr>
+    <td>Email Id</td>
+    <td>{{ dealerData?.name }}</td>
+  </tr>
+  <tr>
+    <td>Address</td>
+    <td>{{ dealerData?.name }}</td>
+  </tr>
+  <tr>
+    <td>State</td>
+    <td>{{ dealerData?.name }}</td>
+  </tr>
+  <tr>
+    <td>City</td>
+    <td>{{ dealerData?.name }}</td>
+  </tr>
+  <tr></tr>
+</table>
+
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button mat-dialog-close style="margin-right: 20%">Close</button>
+  <div>
+    <button mat-button mat-dialog>Warranty Clam</button>
+  </div>
 </div>

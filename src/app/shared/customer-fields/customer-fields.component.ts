@@ -11,13 +11,24 @@ import { map, startWith } from 'rxjs/operators';
 export class CustomerFieldsComponent implements OnInit {
   data: any[] = [];
   filteredOptions: Observable<any[]> | undefined;
-  //autofiled
-  displayFn(value: any) {
-    if (typeof value == 'object') {
-      //all input auto file
-      return value.name;
-    } else return value.toLowerCase();
-  }
+  customergroup: FormGroup = new FormGroup({
+    name: new FormControl('abc', [Validators.required]),
+    address: new FormControl('abc', [Validators.required]),
+    email: new FormControl('a@a.com', [Validators.email]),
+    contactNo: new FormControl('1234567809', [
+      Validators.required,
+      Validators.maxLength(10),
+      Validators.minLength(10),
+    ]),
+    state: new FormControl('GJ', [Validators.required]),
+    city: new FormControl('ahm', [Validators.required]),
+    pincode: new FormControl('123456', [
+      Validators.required,
+      Validators.maxLength(6),
+      Validators.minLength(6),
+    ]),
+  });
+
   constructor(private _getcustomer: CustomerService) {}
 
   ngOnInit(): void {
@@ -50,15 +61,11 @@ export class CustomerFieldsComponent implements OnInit {
       );
     }
   }
-
-  customergroup: FormGroup = new FormGroup({
-    name: new FormControl('abc', [Validators.required]),
-
-    address: new FormControl('aasdd'),
-    email: new FormControl('a@a.com'),
-    contactNo: new FormControl('1234567809'),
-    state: new FormControl('gj'),
-    city: new FormControl('ahm'),
-    pincode: new FormControl('123456'),
-  });
+  //autofiled
+  displayFn(value: any) {
+    if (typeof value == 'object') {
+      //all input auto file
+      return value.name;
+    } else return value.toLowerCase();
+  }
 }

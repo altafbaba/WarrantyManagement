@@ -1,5 +1,6 @@
 <h1 mat-dialog-title>Warranty Detail</h1>
-<div mat-dialog-content>
+<!-- <div mat-dialog-content>
+
   <mat-card style="margin: 10px">
     Customer Name {{ warrantyData?.name }} Mobile No
     {{ warrantyData?.city }} Email Id {{ warrantyData?.email }}
@@ -19,8 +20,85 @@
       {{ warrantyData?.endDate | date }}
     </p>
   </mat-card>
-</div>
+</div> -->
+
+<!-- <mat-list role="list">
+  <mat-list-item role="listitem"
+    >Customer Name :- {{ warrantyData?.name }}</mat-list-item
+  >
+  <mat-list-item role="listitem"
+    >Mobile No {{ warrantyData?.city }}</mat-list-item
+  >
+  <mat-list-item role="listitem"
+    >Email Id {{ warrantyData?.email }}</mat-list-item
+  >
+  <mat-list-item role="listitem">
+    Address {{ warrantyData?.city }}</mat-list-item
+  >
+  <mat-list-item role="listitem"
+    >State {{ warrantyData?.city }} City {{ warrantyData?.city }}</mat-list-item
+  >
+  <mat-list-item role="listitem">
+    Product {{ warrantyData?.product }}
+  </mat-list-item>
+  <mat-list-item role="listitem">
+    Model
+    {{ warrantyData?.modelNo }}</mat-list-item
+  >
+  <mat-list-item role="listitem">
+    Warranty Start Date {{ warrantyData?.startDate | date }}
+  </mat-list-item>
+  <mat-list-item role="listitem">
+    Warranty End Date
+    {{ warrantyData?.endDate | date }}</mat-list-item
+  >
+</mat-list> -->
+
+<table style="width: 600px">
+  <tr>
+    <td>Customer Name</td>
+    <td>{{ warrantyData?.name }}</td>
+  </tr>
+  <tr>
+    <td>Mobile No</td>
+    <td>{{ warrantyData?.mobile }}</td>
+  </tr>
+  <tr>
+    <td>Email Id</td>
+    <td>{{ warrantyData?.email }}</td>
+  </tr>
+  <tr>
+    <td>Address</td>
+    <td>{{ warrantyData?.address }}</td>
+  </tr>
+  <tr>
+    <td>State</td>
+    <td>{{ warrantyData?.state }}</td>
+  </tr>
+  <tr>
+    <td>City</td>
+    <td>{{ warrantyData?.city }}</td>
+  </tr>
+  <tr>
+    <td>Product</td>
+    <td>{{ warrantyData?.product }}</td>
+  </tr>
+  <tr>
+    <td>Model</td>
+    <td>{{ warrantyData?.modelNo }}</td>
+  </tr>
+  <tr>
+    <td>Warranty StartDate</td>
+    <td>{{ warrantyData?.startDate | date }}</td>
+  </tr>
+  <tr>
+    <td>Warranty EndDate</td>
+    <td>{{ warrantyData?.endDate | date }}</td>
+  </tr>
+</table>
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-  <button mat-button mat-dialog (click)="warrantyClam()">Warranty Clam</button>
+  <button mat-button mat-dialog-close style="margin-right: 20%">Close</button>
+  <div>
+    <button mat-button mat-dialog>Warranty Clam</button>
+  </div>
 </div>

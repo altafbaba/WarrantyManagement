@@ -1,8 +1,11 @@
-<div>
-  <h3>Dashboard</h3>
+<div
+  class="container mt-4 mb-2"
+  style="display: flex; justify-content: space-between"
+>
+  <h4 style="align-self: center">Dashboard</h4>
 </div>
 <!-- card for details -->
-<div class="row" style="margin: 30px">
+<div class="row" style="margin: 15px">
   <app-dashboard-card
     class="col"
     title="Dealer "
@@ -21,10 +24,14 @@
     title="Already Exp. Warranty  "
   ></app-dashboard-card>
 </div>
-
-<h4>Warranty Exp.Customer List</h4>
+<div
+  class="container mt-4 mb-2"
+  style="display: flex; justify-content: space-between"
+>
+  <h4 style="align-self: center">Warranty Exp.Customer List</h4>
+</div>
 <!-- Table for warrty exp list -->
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8" style="margin-left: 25px; margin-right: 25px">
   <table mat-table [dataSource]="dataSource">
     <!-- Position Column -->
     <ng-container matColumnDef="position">

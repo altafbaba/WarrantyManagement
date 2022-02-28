@@ -13,12 +13,21 @@ import { DealerService } from 'src/app/core/dealer/dealer.service';
 export class DealerFormComponent implements OnInit {
   dealergroup: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required]),
-    address1: new FormControl(''),
-    email: new FormControl(''),
-    contactNo: new FormControl(''),
-    state: new FormControl(''),
-    city: new FormControl(''),
-    pincode: new FormControl(''),
+    address: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.email]),
+    contactNo: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(10),
+      Validators.minLength(10),
+    ]),
+    state: new FormControl('', [Validators.required]),
+    city: new FormControl('', [Validators.required]),
+    pincode: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(6),
+      Validators.minLength(6),
+    ]),
+    gstNo: new FormControl('', [Validators.required]),
   });
 
   constructor(

@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, Input } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DealerService } from 'src/app/core/dealer/dealer.service';
 import { IDealer } from 'src/app/core/dealer/dealer.types';
+import { IWarranty } from 'src/app/core/warranty/warranty.types';
 
 @Component({
   selector: 'app-dealer-card',
@@ -15,7 +16,7 @@ export class DealerCardComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: string
   ) {}
 
-  dealerData: IDealer;
+  dealerData: IWarranty;
 
   ngOnInit(): void {
     this._dealerService.getDealerbyId(this.data).subscribe((resp: any) => {

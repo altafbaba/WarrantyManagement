@@ -33,13 +33,17 @@ export class WarrantyformComponent implements OnInit {
       ...this.warrantygroup.value,
       ...this._custm.customergroup.value,
     };
-    console.log(wrnty);
 
-    this._warrantyService.createWarranty(wrnty).subscribe((resp) => {
-      this._custm.customergroup.value;
-    });
-
-    this._snackBar.open('Warranty Created', 'Close')._dismissAfter(3000);
+    this._warrantyService.createWarranty(wrnty).subscribe(
+      (wrnty) => {
+        this._custm.customergroup.value;
+        this._snackBar.open('Warranty Created', 'Close')._dismissAfter(3500);
+        this._router.navigateByUrl('/Warranty');
+      },
+      (err) => {
+        this._snackBar.open(err.message, 'Close')._dismissAfter(3500);
+      }
+    );
 
     this._router.navigateByUrl('/Warranty');
 

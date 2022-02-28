@@ -18,11 +18,11 @@ export class CustomerService {
     return this._http.post(url, _customer);
   }
   getCustomers() {
-    let url = `${this._serverUrl}/vendor`;
+    let url = `${this._serverUrl}/warranty`;
     return this._http.get(url);
   }
   getCustomerbyId(customerId: string) {
-    let url = `${this._serverUrl}/vendor`;
+    let url = `${this._serverUrl}/warranty/`;
     return this._http.get(url + customerId);
   }
 }

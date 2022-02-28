@@ -24,5 +24,4 @@ export class WarrantyCardComponent implements OnInit {
       this.warrantyData = res.data;
     });
   }
-  warrantyClam() {}
 }

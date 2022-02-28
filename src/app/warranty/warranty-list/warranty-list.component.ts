@@ -7,6 +7,7 @@ import { WarrantyService } from 'src/app/core/warranty/warranty.service';
 import { MatDialog } from '@angular/material/dialog';
 import { WarrantyCardComponent } from '../warranty-card/warranty-card.component';
 import { IWarranty } from 'src/app/core/warranty/warranty.types';
+import { compareAsc, isEqual, isToday } from 'date-fns';
 @Component({
   selector: 'app-warranty-list',
   templateUrl: './warranty-list.component.html',
@@ -44,15 +45,8 @@ export class WarrantyListComponent implements OnInit {
   openDetails(row: any) {
     this._dialog.open(WarrantyCardComponent, { data: row._id });
   }
+  isWarrantyExp(date: string) {
+    if (isToday(new Date(date))) return 0;
+    return compareAsc(new Date(date), new Date(Date.now()));
+  }
 }
-
-// export interface PeriodicElement {
-//   position: number;
-//   name: string;
-//   contactNo: number;
-//   product: string;
-//   model: string;
-//   wsdate: string;
-//   wedate: string;
-// }
-// const ELEMENT_DATA: PeriodicElement[] = [];

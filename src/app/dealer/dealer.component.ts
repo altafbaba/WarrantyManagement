@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { DealerService } from '../core/dealer/dealer.service';
+import { IDealer } from '../core/dealer/dealer.types';
 import { DealerCardComponent } from './dealer-card/dealer-card.component';
 import { DealerFormComponent } from './dealer-form/dealer-form.component';
 @Component({
@@ -12,7 +13,17 @@ import { DealerFormComponent } from './dealer-form/dealer-form.component';
   styleUrls: ['./dealer.component.scss'],
 })
 export class DealerComponent implements OnInit {
-  displayedColumns: any[] = ['no', 'name', 'city', 'address1', 'contactNo'];
+  displayedColumns: any[] = [
+    'no',
+    'name',
+    'contactNo',
+    'email',
+    'gstNo',
+    'address',
+    'state',
+    'city',
+    'pinCode',
+  ];
   dataSource = new MatTableDataSource<Dealer>([]);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

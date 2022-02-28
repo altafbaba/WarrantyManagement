@@ -20,7 +20,7 @@ export class WarrantyService {
     return this._http.get(url);
   }
   getWarrantybyId(warrantyId: string) {
-    let url = `${this._serverUrl}/warranty`;
+    let url = `${this._serverUrl}/warranty/`;
     return this._http.get(url + warrantyId);
   }
 }

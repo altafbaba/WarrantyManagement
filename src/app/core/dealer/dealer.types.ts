@@ -1,10 +1,11 @@
 export interface IDealer {
+  _id: string;
   name: string;
-  mobile: string;
+  ontactNo: string;
   email?: string;
   address: string;
   gstNo: string;
   state: string;
   city: string;
-  pincode: number;
+  pinCode: number;
 }
