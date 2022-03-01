@@ -39,6 +39,8 @@ const warrantyRoutes: Routes = [
     RouterModule.forChild(warrantyRoutes),
     SharedModule,
     MaterialCustomModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
 })
 export class WarrantyModule {}

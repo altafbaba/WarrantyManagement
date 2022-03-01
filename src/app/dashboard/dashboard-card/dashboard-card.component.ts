@@ -9,6 +9,8 @@ export class DashboardCardComponent implements OnInit {
   @Input() title: string = 'N/A';
   @Input() count: number = 0;
   @Input() Icard: any;
+  @Input() icon: any;
+  @Input() color: any;
   constructor() {}
 
   ngOnInit(): void {}

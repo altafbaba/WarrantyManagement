@@ -5,30 +5,48 @@
   <h4 style="align-self: center">Dashboard</h4>
 </div>
 <!-- card for details -->
-<div class="row" style="margin: 15px">
+<div
+  class="row"
+  style="margin: 15px"
+  ngClass="{
+  color red = 
+}
+"
+>
   <app-dashboard-card
     class="col"
     title="Dealer "
     [count]="data?.assets.assetStatusCount.IN_POOL"
+    icon="settings_input_antenna"
+    color="#44CA87"
   >
   </app-dashboard-card>
   <app-dashboard-card
     class="col"
     title="Customer "
     [count]="data?.users.totalUsers"
+    icon="supervisor_account"
+    color="#008000"
   ></app-dashboard-card>
-  <app-dashboard-card class="col" title="Warranty Exp."></app-dashboard-card>
+  <app-dashboard-card
+    class="col"
+    title="Warranty Expired"
+    icon="circle_notifications"
+    color="#FFCD00"
+  ></app-dashboard-card>
 
   <app-dashboard-card
     class="col"
-    title="Already Exp. Warranty  "
+    title="Expired Warranty"
+    icon="anchor"
+    color="#DF0021"
   ></app-dashboard-card>
 </div>
 <div
   class="container mt-4 mb-2"
   style="display: flex; justify-content: space-between"
 >
-  <h4 style="align-self: center">Warranty Exp.Customer List</h4>
+  <h4 style="align-self: center">Warranty Expired Customer</h4>
 </div>
 <!-- Table for warrty exp list -->
 <div class="mat-elevation-z8" style="margin-left: 25px; margin-right: 25px">

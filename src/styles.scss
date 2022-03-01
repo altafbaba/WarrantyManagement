@@ -8,3 +8,11 @@ body {
   margin: 0;
   font-family: "Poppins", "Helvetica Neue", sans-serif;
 }
+mat-card {
+  border-radius: 2rem !important;
+  box-shadow: none !important;
+  border: 2px solid rgba(220, 220, 220, 0.541);
+}
+mat-card:hover {
+  border: 2px solid rgb(190, 82, 190);
+}

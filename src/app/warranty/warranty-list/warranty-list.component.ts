@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { WarrantyCardComponent } from '../warranty-card/warranty-card.component';
 import { IWarranty } from 'src/app/core/warranty/warranty.types';
 import { compareAsc, isEqual, isToday } from 'date-fns';
+import { CustomerFieldsComponent } from 'src/app/shared/customer-fields/customer-fields.component';
 @Component({
   selector: 'app-warranty-list',
   templateUrl: './warranty-list.component.html',
@@ -16,6 +17,7 @@ import { compareAsc, isEqual, isToday } from 'date-fns';
 export class WarrantyListComponent implements OnInit {
   @Input() data: any[] = [];
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(CustomerFieldsComponent) _custm: CustomerFieldsComponent;
   displayedColumns: any[] = [
     'position',
     'name',

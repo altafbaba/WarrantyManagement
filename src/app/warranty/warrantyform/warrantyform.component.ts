@@ -29,6 +29,9 @@ export class WarrantyformComponent implements OnInit {
   ngOnInit(): void {}
 
   save() {
+    this.warrantygroup.markAllAsTouched();
+    //Validate form
+    if (this.warrantygroup.invalid) return;
     let wrnty = {
       ...this.warrantygroup.value,
       ...this._custm.customergroup.value,
@@ -37,9 +40,11 @@ export class WarrantyformComponent implements OnInit {
     this._warrantyService.createWarranty(wrnty).subscribe(
       (wrnty) => {
         this._custm.customergroup.value;
+
         this._snackBar.open('Warranty Created', 'Close')._dismissAfter(3500);
         this._router.navigateByUrl('/Warranty');
       },
+
       (err) => {
         this._snackBar.open(err.message, 'Close')._dismissAfter(3500);
       }

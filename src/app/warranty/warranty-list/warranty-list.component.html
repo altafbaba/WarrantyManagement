@@ -40,19 +40,20 @@
         <!-- {{ isWarrantyExp(element.endDate) }} -->
 
         <mat-icon
-          style="color: limegreen"
+          style="color: rgb(54, 230, 54)"
           *ngIf="isWarrantyExp(element.endDate) == 1"
-          >check</mat-icon
+          >verified</mat-icon
         >
         <mat-icon
-          style="color: crimson"
+          style="color: rgb(248, 37, 79)"
           *ngIf="isWarrantyExp(element.endDate) == -1"
-          >close</mat-icon
         >
+          do_not_disturb_on
+        </mat-icon>
         <mat-icon
-          style="color: yellow"
+          style="color: #faeb18"
           *ngIf="isWarrantyExp(element.endDate) == 0"
-          >home</mat-icon
+          >report</mat-icon
         >
       </td>
     </ng-container>
