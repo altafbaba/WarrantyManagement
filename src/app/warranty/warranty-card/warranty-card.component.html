@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Warranty Detail</h1>
+<h3>Warranty Detail</h3>
 
 <table style="width: 600px">
   <tr>
@@ -46,37 +46,51 @@
     <td>{{ warrantyData?.endDate | date }}</td>
   </tr>
 </table>
-<div mat-dialog-actions>
-  <button
-    mat-button
-    mat-dialog-close
-    style="margin-right: 55%; margin-bottom: 20px"
-  >
-    Close
-  </button>
-  <div>
-    <button mat-raised-button color="primary" (click)="WCBTN()">
-      Warranty Clam
-    </button>
-  </div>
-  <div *ngIf="warrantyClam">
-    <div>
-      <mat-form-field style="margin-right: 42%" appearance="outline">
-        <mat-label>Remark</mat-label>
-        <input matInput [formControl]="remark" />
-      </mat-form-field>
-      <button mat-raised-button color="primary" (click)="save()">Save</button>
-    </div>
 
+<div *ngIf="isEditMode">
+  <mat-form-field appearance="outline">
+    <mat-label>Remark</mat-label>
+    <input matInput [formControl]="remark" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="save()">Save</button>
+  <button mat-raised-button color="warn" (click)="isEditMode = false">
+    cancel
+  </button>
+</div>
+<div *ngIf="!isEditMode">
+  <button
+    [disabled]="checkWarrantyExpired()"
+    mat-raised-button
+    color="primary"
+    (click)="isEditMode = true; WCBTN()"
+    cdkFocusInitial
+  >
+    Claim Warranty
+  </button>
+</div>
+<div
+  *ngIf="warrantyClam; else noWarrantyClaim"
+  style="display: flex; flex-direction: column"
+>
+  <div></div>
+  <div>
     <table style="width: 600px">
       <tr>
-        <td>Created Date</td>
-        <td>{{ warrantyData?.endDate | date }}</td>
+        <th>Created Date</th>
+        <th>Remarks</th>
       </tr>
       <tr>
-        <td>Remarks</td>
+        <td>{{ warrantyData?.startDate | date }}</td>
         <td>{{ warrantyData?.endDate | date }}</td>
       </tr>
     </table>
   </div>
 </div>
+
+<mat-dialog-actions align="end">
+  <button mat-flat-button mat-dialog-close color="warn">Cancel</button>
+</mat-dialog-actions>
+
+<ng-template #noWarrantyClaim>
+  <h6>No Warraty claimed</h6>
+</ng-template>

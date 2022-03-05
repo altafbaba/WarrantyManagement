@@ -5,6 +5,7 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
+import { isPast } from 'date-fns';
 import { WarrantyService } from 'src/app/core/warranty/warranty.service';
 import { IWarranty } from 'src/app/core/warranty/warranty.types';
 
@@ -14,15 +15,16 @@ import { IWarranty } from 'src/app/core/warranty/warranty.types';
   styleUrls: ['./warranty-card.component.scss'],
 })
 export class WarrantyCardComponent implements OnInit {
+  remark = new FormControl('', [Validators.required]);
+
+  warrantyData: IWarranty;
+  isEditMode = false;
+
   constructor(
     private _getwrnt: WarrantyService,
     public dialogRef: MatDialogRef<WarrantyCardComponent>,
     @Inject(MAT_DIALOG_DATA) public data: string
   ) {}
-
-  remark = new FormControl('', [Validators.required]);
-
-  warrantyData: IWarranty;
 
   ngOnInit(): void {
     this._getwrnt.getWarrantybyId(this.data).subscribe((res: any) => {
@@ -36,5 +38,9 @@ export class WarrantyCardComponent implements OnInit {
   }
   save() {
     console.log(this.remark.value);
+  }
+
+  checkWarrantyExpired() {
+    return isPast(new Date(this.warrantyData.endDate));
   }
 }

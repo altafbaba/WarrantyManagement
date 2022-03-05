@@ -1,34 +1,32 @@
-<div>
-  <mat-card
-    style="
-      display: flex;
-
-      height: 100%;
-      background-image: url('../../../../assets/images/flat-mountains.svg');
-      background-size: cover;
-      align-items: center;
-      min-width: 100px;
-      padding: 14.6%;
-    "
-  >
-    <mat-card>
-      <div [formGroup]="signgroup">
-        <div>
-          <mat-form-field class="example-full-width" appearance="outline">
-            <mat-label>Email Id</mat-label>
-            <input matInput formControlName="email" />
-          </mat-form-field>
-        </div>
-        <div>
-          <mat-form-field appearance="outline">
-            <mat-label>Password</mat-label>
-            <input matInput type="password" formControlName="password" />
-          </mat-form-field>
-        </div>
-        <button mat-raised-button color="primary" (click)="login()">
-          Login
-        </button>
+<div
+  style="
+    display: flex;
+    background-image: url('../../../../assets/images/subtle-prism.svg');
+    background-size: cover;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  "
+>
+  <div style="background-color: white; padding: 30px; border-radius: 2rem">
+    <div [formGroup]="signgroup">
+      <div>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Email Id</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
       </div>
-    </mat-card>
-  </mat-card>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="primary" (click)="login()">Login</button>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: top; margin-left: 100px">
+    <h1>Warranty Managment system</h1>
+  </div>
 </div>

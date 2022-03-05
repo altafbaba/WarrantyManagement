@@ -39,6 +39,9 @@ export class DealerFormComponent implements OnInit {
   ngOnInit(): void {}
 
   save() {
+    this.dealergroup.markAllAsTouched();
+    //validatior
+    if (this.dealergroup.invalid) return;
     this._dealer.createDealer(this.dealergroup.value).subscribe({
       error: (err) => {
         this._snackBar.open(err.message, 'Close')._dismissAfter(3500);

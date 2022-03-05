@@ -38,6 +38,10 @@ export class CustomerFormComponent implements OnInit {
   }
   ngAfterViewInit() {}
   save() {
+    this._cusCompt.customergroup.markAllAsTouched();
+    //validation
+    if (this._cusCompt.customergroup.invalid) return;
+
     this._customerService
       .createCustomer(this._cusCompt.customergroup.value)
       .subscribe({
