@@ -9,13 +9,15 @@
     <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Customer Name</th>
-      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.customer?.name }}</td>
     </ng-container>
 
     <!-- Weight Column -->
     <ng-container matColumnDef="contactNo">
       <th mat-header-cell *matHeaderCellDef>Mobile No</th>
-      <td mat-cell *matCellDef="let element">{{ element.contactNo }}</td>
+      <td mat-cell *matCellDef="let element">
+        {{ element.customer?.contactNo }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="product">

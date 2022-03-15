@@ -16,7 +16,7 @@
   <app-dashboard-card
     class="col"
     title="Dealer "
-    [count]="data?.assets.assetStatusCount.IN_POOL"
+    [count]="data?.dealers"
     icon="settings_input_antenna"
     color="#44CA87"
   >
@@ -24,13 +24,22 @@
   <app-dashboard-card
     class="col"
     title="Customer "
-    [count]="data?.users.totalUsers"
+    [count]="data?.customers"
     icon="supervisor_account"
-    color="#008000"
+    color="#01FEFE"
   ></app-dashboard-card>
   <app-dashboard-card
     class="col"
-    title="Warranty Expired"
+    title="Active Warranty "
+    [count]="data?.activeWarrnaty"
+    icon="supervisor_account"
+    color="#01FEFE"
+  ></app-dashboard-card>
+
+  <app-dashboard-card
+    class="col"
+    title="Expiring This Month"
+    [count]="data?.expiringThisMonth.length"
     icon="circle_notifications"
     color="#FFCD00"
   ></app-dashboard-card>

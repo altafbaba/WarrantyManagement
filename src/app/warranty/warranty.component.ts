@@ -22,7 +22,7 @@ export class WarrantyComponent implements OnInit {
   dataSource = new MatTableDataSource<ICustomer>([]);
   ngOnInit(): void {
     this._dealerService.getDealers().subscribe((response: any) => {
-      this.data = response.data;
+      this.data = response;
     });
   }
   applyFilter(event: Event) {

@@ -5,6 +5,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CustomerFieldsComponent } from 'src/app/shared/customer-fields/customer-fields.component';
 import { error } from '@angular/compiler/src/util';
+import { id } from 'date-fns/locale';
+import { CustomerService } from 'src/app/core/customer/customer.service';
 
 @Component({
   selector: 'app-warrantyform',
@@ -17,7 +19,8 @@ export class WarrantyformComponent implements OnInit {
   constructor(
     private _warrantyService: WarrantyService,
     private _snackBar: MatSnackBar,
-    private _router: Router
+    private _router: Router,
+    private _cstmService: CustomerService
   ) {}
   warrantygroup: FormGroup = new FormGroup({
     contactNo: new FormControl('1231231230', [Validators.required]),
@@ -32,23 +35,28 @@ export class WarrantyformComponent implements OnInit {
     this.warrantygroup.markAllAsTouched();
     //Validate form
     if (this.warrantygroup.invalid) return;
-    let wrnty = {
-      ...this.warrantygroup.value,
-      ...this._custm.customergroup.value,
-    };
 
-    this._warrantyService.createWarranty(wrnty).subscribe(
-      (wrnty) => {
-        this._custm.customergroup.value;
+    this._cstmService
+      .createCustomer(this._custm.customergroup.value)
+      .subscribe((val: any) => {
+        let wrnty = {
+          ...this.warrantygroup.value,
+          customer: val._id,
+        };
 
-        this._snackBar.open('Warranty Created', 'Close')._dismissAfter(3500);
-        this._router.navigateByUrl('/Warranty');
-      },
+        this._warrantyService.createWarranty(wrnty).subscribe(
+          (wrnty) => {
+            this._snackBar
+              .open('Warranty Created', 'Close')
+              ._dismissAfter(3500);
+            this._router.navigateByUrl('/Warranty');
+          },
 
-      (err) => {
-        this._snackBar.open(err.message, 'Close')._dismissAfter(3500);
-      }
-    );
+          (err) => {
+            this._snackBar.open(err.message, 'Close')._dismissAfter(3500);
+          }
+        );
+      });
 
     this._router.navigateByUrl('/Warranty');
 

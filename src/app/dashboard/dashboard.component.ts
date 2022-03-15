@@ -31,8 +31,8 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._dashboardService.getDashboard().subscribe((val: IDTO) => {
-      this.data = val.data;
+    this._dashboardService.getDashboard().subscribe((val: any) => {
+      this.data = val;
     });
   }
 }

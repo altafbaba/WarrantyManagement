@@ -11,7 +11,7 @@ import { WarrantyformComponent } from './warranty/warrantyform/warrantyform.comp
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'auth/signin',
+    redirectTo: 'Dashboard',
     pathMatch: 'full',
   },
   {

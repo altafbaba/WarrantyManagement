@@ -13,16 +13,16 @@ export class CustomerService {
   constructor(private _http: HttpClient) {}
 
   createCustomer(_customer: ICustomer) {
-    let url = `${this._serverUrl}/warranty`;
+    let url = `${this._serverUrl}/api/customer`;
 
     return this._http.post(url, _customer);
   }
   getCustomers() {
-    let url = `${this._serverUrl}/warranty`;
+    let url = `${this._serverUrl}/api/customer`;
     return this._http.get(url);
   }
   getCustomerbyId(customerId: string) {
-    let url = `${this._serverUrl}/warranty/`;
+    let url = `${this._serverUrl}/api/customer/`;
     return this._http.get(url + customerId);
   }
 }

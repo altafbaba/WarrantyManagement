@@ -36,7 +36,8 @@ export class WarrantyListComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this._warrantyService.getWarranty().subscribe((res: any) => {
-      this.dataSource.data = res.data;
+      console.log(res);
+      this.dataSource.data = res;
     });
   }
 

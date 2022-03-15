@@ -1,9 +1,18 @@
+import { IWarranty } from 'src/app/core/warranty/warranty.types';
+
 export interface IDashboard {
   assets: IAssetDashboardData;
   ticket: ITicketDashboardData;
   users: IUserDashboardData;
+  dealers: number;
+  customers: number;
+  activeWarrnaty: number;
+  expiringThisMonth: IWarranty[];
+  expiredWrnty: IWarranty[];
 }
-
+// export interface IDealerDashboarddata {
+//   dealers: number;
+// }
 export interface ITicketDashboardData {
   ticketStatusCount: {
     Assigned: number;

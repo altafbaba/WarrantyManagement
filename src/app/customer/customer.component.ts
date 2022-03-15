@@ -60,7 +60,7 @@ export class CustomerComponent implements OnInit, AfterViewInit {
   // If accessing Child COmponent using VIew Child -----> reference should be in AfterViewInit
   ngAfterViewInit(): void {
     this._getdearlerService.getDealers().subscribe((response: any) => {
-      this.data = response.data;
+      this.data = response;
     });
     //auto complate dealer input fild
 
@@ -70,11 +70,11 @@ export class CustomerComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     //get dealer form API for DealerNamr
     this._getdearlerService.getDealers().subscribe((_res: any) => {
-      this.options = _res.data;
+      this.options = _res;
     });
     // get customer for Api for table
     this._customerService.getCustomers().subscribe((res: any) => {
-      this.dataSource.data = res.data;
+      this.dataSource.data = res;
     });
   }
 

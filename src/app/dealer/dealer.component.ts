@@ -29,13 +29,14 @@ export class DealerComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private _getDealer: DealerService, private _dialog: MatDialog) {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._getDealer.getDealers().subscribe((resp: any) => {
+      this.dataSource.data = resp;
+    });
+  }
 
   ngAfterViewInit(): void {
     //get data from API in Table
-    this._getDealer.getDealers().subscribe((resp: any) => {
-      this.dataSource.data = resp.data;
-    });
 
     //angular material
     this.dataSource.paginator = this.paginator;

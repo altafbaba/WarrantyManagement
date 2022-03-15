@@ -47,7 +47,7 @@ export class DealerFormComponent implements OnInit {
         this._snackBar.open(err.message, 'Close')._dismissAfter(3500);
       },
       next: (res) => {
-        this._snackBar.open('User Created', 'Close')._dismissAfter(3500);
+        this._snackBar.open('Dealer Created', 'Close')._dismissAfter(3500);
         this._router.navigateByUrl('/Dealer');
       },
     });
