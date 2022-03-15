@@ -23,4 +23,8 @@ export class WarrantyService {
     let url = `${this._serverUrl}/api/warranty/`;
     return this._http.get(url + warrantyId);
   }
+  clamWarranty(_wrnty: any) {
+    let url = `${this._serverUrl}/api/warranty`;
+    return this._http.put(url, _wrnty);
+  }
 }

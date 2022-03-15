@@ -5,27 +5,27 @@
     <td style="border-right: 1px solid transparent !important">
       Customer Name
     </td>
-    <td>{{ warrantyData?.name }}</td>
+    <td>{{ warrantyData?.customer.name }}</td>
   </tr>
   <tr>
     <td style="border-right: 1px solid transparent !important">Mobile No</td>
-    <td>{{ warrantyData?.mobile }}</td>
+    <td>{{ warrantyData?.customer.contactNo }}</td>
   </tr>
   <tr>
     <td style="border-right: 1px solid transparent !important">Email Id</td>
-    <td>{{ warrantyData?.email }}</td>
+    <td>{{ warrantyData?.customer.email }}</td>
   </tr>
   <tr>
     <td style="border-right: 1px solid transparent !important">Address</td>
-    <td>{{ warrantyData?.address }}</td>
+    <td>{{ warrantyData?.customer.address }}</td>
   </tr>
   <tr>
     <td style="border-right: 1px solid transparent !important">State</td>
-    <td>{{ warrantyData?.state }}</td>
+    <td>{{ warrantyData?.customer.state }}</td>
   </tr>
   <tr>
     <td style="border-right: 1px solid transparent !important">City</td>
-    <td>{{ warrantyData?.city }}</td>
+    <td>{{ warrantyData?.customer.city }}</td>
   </tr>
   <tr>
     <td style="border-right: 1px solid transparent !important">Product</td>
@@ -71,19 +71,18 @@
   </button>
 </div>
 <div
-  *ngIf="warrantyClam; else noWarrantyClaim"
+  *ngIf="warrantyData?.claims.length > 0; else noWarrantyClaim"
   style="display: flex; flex-direction: column"
 >
-  <div></div>
   <div>
     <table style="width: 600px">
       <tr>
         <th>Created Date</th>
         <th>Remarks</th>
       </tr>
-      <tr>
-        <td>{{ warrantyData?.startDate | date }}</td>
-        <td>{{ warrantyData?.endDate | date }}</td>
+      <tr *ngFor="let clm of warrantyData.claims">
+        <td>{{ clm.date | date }}</td>
+        <td>{{ clm.remark | titlecase }}</td>
       </tr>
     </table>
   </div>

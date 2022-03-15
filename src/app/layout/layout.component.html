@@ -1,21 +1,20 @@
 <div class="main-container">
-  <mat-toolbar
-    color="primary"
-    style="
-      background-image: url(../../assets/images/World\ i\ -\ logo.svg);
-      background-size: 10px;
-    "
-  >
-    <button
-      mat-icon-button
-      class="example-icon"
-      aria-label="Example icon-button with menu icon"
-      (click)="drawer.toggle()"
-    >
-      <mat-icon matTooltip="Menu">menu</mat-icon>
-    </button>
+  <mat-toolbar color="primary"
+    ><div>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+        (click)="drawer.toggle()"
+      >
+        <mat-icon matTooltip="Menu">menu</mat-icon>
+      </button>
+      <img width="60px" src="../../assets/images/World i - logo.svg" alt="" />
+    </div>
 
-    <span style="padding-left: 35%">Warranty Managment System</span>
+    <span style="padding-left: 35%; font-family: poppins"
+      >Warranty Managment System</span
+    >
 
     <span class="example-spacer"></span>
 
@@ -44,7 +43,7 @@
     >
       <button
         mat-button
-        class="sideNavButton fontpop"
+        class="sideNavButton"
         mat-button
         color="primary"
         style="margin-bottom: 10px; margin-top: 10px"
@@ -68,7 +67,7 @@
       </button>
       <button
         mat-button
-        class="sideNavButton fontpop"
+        class="sideNavButton"
         mat-button
         color="primary"
         style="margin-bottom: 10px"
@@ -81,7 +80,7 @@
       </button>
       <button
         mat-button
-        class="sideNavButton fontpop"
+        class="sideNavButton"
         mat-button
         color="primary"
         style="margin-bottom: 10px"
@@ -94,11 +93,12 @@
       </button>
       <button
         mat-button
-        class="sideNavButton fontpop"
+        class="sideNavButton"
         mat-button
         color="primary"
         style="margin-bottom: 10px"
         routerLink="user"
+        disabled
       >
         <mat-icon style="color: grey; padding-right: 25%">person</mat-icon>
         User

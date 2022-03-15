@@ -12,16 +12,16 @@ export class CustomerFieldsComponent implements OnInit {
   data: any[] = [];
   filteredOptions: Observable<any[]> | undefined;
   customergroup: FormGroup = new FormGroup({
-    name: new FormControl('abc', [Validators.required]),
-    address: new FormControl('abc', [Validators.required]),
+    name: new FormControl('abcdef', [Validators.required]),
+    address: new FormControl('abcdefghig', [Validators.required]),
     email: new FormControl('a@a.com', [Validators.email]),
     contactNo: new FormControl('1234567809', [
       Validators.required,
       Validators.maxLength(10),
       Validators.minLength(10),
     ]),
-    state: new FormControl('GJ', [Validators.required]),
-    city: new FormControl('ahm', [Validators.required]),
+    state: new FormControl('gujarat', [Validators.required]),
+    city: new FormControl('ahmedabad', [Validators.required]),
     pincode: new FormControl('123456', [
       Validators.required,
       Validators.maxLength(6),

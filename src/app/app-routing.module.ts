@@ -44,11 +44,11 @@ const routes: Routes = [
           import('./dealer/dealer.module').then((x) => x.DealerModule),
       },
 
-      {
-        path: 'user',
-        loadChildren: () =>
-          import('./featare/user/user.module').then((x) => x.UserModule),
-      },
+      // {
+      //   path: 'user',
+      //   loadChildren: () =>
+      //     import('./featare/user/user.module').then((x) => x.UserModule),
+      // },
       {
         path: 'warrantyform',
         loadChildren: () =>

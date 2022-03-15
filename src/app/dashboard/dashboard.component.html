@@ -26,14 +26,14 @@
     title="Customer "
     [count]="data?.customers"
     icon="supervisor_account"
-    color="#01FEFE"
+    color="#FF6C37"
   ></app-dashboard-card>
   <app-dashboard-card
     class="col"
     title="Active Warranty "
     [count]="data?.activeWarrnaty"
-    icon="supervisor_account"
-    color="#01FEFE"
+    icon="bookmark_added"
+    color="#007ACC"
   ></app-dashboard-card>
 
   <app-dashboard-card
@@ -47,6 +47,7 @@
   <app-dashboard-card
     class="col"
     title="Expired Warranty"
+    [count]="data?.expiredWrnty.length"
     icon="anchor"
     color="#DF0021"
   ></app-dashboard-card>
@@ -59,7 +60,7 @@
 </div>
 <!-- Table for warrty exp list -->
 <div class="mat-elevation-z8" style="margin-left: 25px; margin-right: 25px">
-  <table mat-table [dataSource]="dataSource">
+  <table mat-table [dataSource]="data?.expiringThisMonth">
     <!-- Position Column -->
     <ng-container matColumnDef="position">
       <th mat-header-cell *matHeaderCellDef color="primary">No.</th>
