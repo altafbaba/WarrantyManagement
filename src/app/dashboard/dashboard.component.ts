@@ -16,9 +16,13 @@ export class DashboardComponent implements OnInit {
     'position',
     'name',
     'contactNo',
+    'product',
+    'modelNo',
+    'startDate',
+    'endDate',
+
     'state',
     'city',
-    'status',
   ];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -36,11 +40,8 @@ export class DashboardComponent implements OnInit {
   }
 }
 export interface PeriodicElement {
-  name: string;
   position: number;
-  weight: number;
-  symbol: string;
-
+  customer: string;
   contactNo: number;
   state: string;
   city: string;

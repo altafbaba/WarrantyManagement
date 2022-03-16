@@ -45,6 +45,7 @@ export class CustomerComponent implements OnInit, AfterViewInit {
     'contactNo',
     'state',
     'city',
+    'pincode',
   ];
   dataSource = new MatTableDataSource<ICustomer>([]);
 
