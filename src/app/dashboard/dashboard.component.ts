@@ -14,7 +14,6 @@ import { MatTableDataSource } from '@angular/material/table';
 export class DashboardComponent implements OnInit {
   displayedColumns: string[] = [
     'position',
-    'vName',
     'name',
     'contactNo',
     'state',
@@ -41,8 +40,6 @@ export interface PeriodicElement {
   position: number;
   weight: number;
   symbol: string;
-
-  vName: string;
 
   contactNo: number;
   state: string;
