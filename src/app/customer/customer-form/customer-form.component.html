@@ -5,7 +5,12 @@
     <!-- customer fields component import   -->
     <mat-form-field class="example-full-width fonP" appearance="outline">
       <mat-label>Dealer Name</mat-label>
-      <input [formControl]="dealerCtrl" matInput [matAutocomplete]="auto" />
+      <input
+        [formControl]="dealerCtrl"
+        matInput
+        [matAutocomplete]="auto"
+        class="fonP"
+      />
       <mat-autocomplete
         autoActiveFirstOption
         #auto="matAutocomplete"

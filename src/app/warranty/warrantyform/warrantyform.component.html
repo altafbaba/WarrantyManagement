@@ -10,34 +10,44 @@
     <mat-form-field class="col" appearance="outline">
       <mat-label class="fonP">Product</mat-label>
 
-      <input matInput formControlName="product" />
+      <input matInput formControlName="product" class="fonP" />
     </mat-form-field>
     <mat-form-field class="col" appearance="outline">
       <mat-label class="fonP">Model No</mat-label>
-      <input matInput formControlName="modelNo" />
+      <input matInput formControlName="modelNo" class="fonP" />
     </mat-form-field>
 
     <mat-form-field class="col" appearance="outline">
       <mat-label class="fonP">Serial Number</mat-label>
-      <input matInput formControlName="contactNo" />
+      <input matInput formControlName="contactNo" class="fonP" />
     </mat-form-field>
   </div>
   <div class="row">
     <mat-form-field class="col" appearance="outline">
       <mat-label class="fonP">WSR No</mat-label>
-      <input matInput formControlName="contactNo" />
+      <input matInput formControlName="contactNo" class="fonP" />
     </mat-form-field>
 
     <mat-form-field class="col" appearance="outline">
       <mat-label class="fonP">Warranty Start Date</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="startDate" />
+      <input
+        matInput
+        [matDatepicker]="picker"
+        formControlName="startDate"
+        class="fonP"
+      />
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker touchUi #picker></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field class="col" appearance="outline">
       <mat-label class="fonP">Warranty End Date</mat-label>
-      <input matInput [matDatepicker]="picker2" formControlName="endDate" />
+      <input
+        matInput
+        [matDatepicker]="picker2"
+        formControlName="endDate"
+        class="fonP"
+      />
       <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
       <mat-datepicker touchUi #picker2></mat-datepicker>
     </mat-form-field>
