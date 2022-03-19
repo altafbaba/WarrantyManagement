@@ -40,7 +40,7 @@ export class CustomerComponent implements OnInit, AfterViewInit {
 
   displayedColumns: any[] = [
     'position',
-    'vName',
+    'dName',
     'name',
     'contactNo',
     'state',

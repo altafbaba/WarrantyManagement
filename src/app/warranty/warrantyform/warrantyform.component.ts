@@ -59,19 +59,5 @@ export class WarrantyformComponent implements OnInit {
       });
 
     this._router.navigateByUrl('/Warranty');
-
-    // this._warrantyService
-    //   .createWarranty(this.warrantygroup.value)
-    //   .subscribe((res) => {
-    //     this._custm.customergroup.value;
-    //   });
-    //   error: (err) => {
-    //     this._snackBar.open(err.message, 'Close')._dismissAfter(3500);
-    //   },
-    //   next: (res) => {
-    //     this._snackBar.open('Warranty Created', 'Close')._dismissAfter(3500);
-    //     this._router.navigateByUrl('/Warranty');
-    //   },
-    // });
   }
 }

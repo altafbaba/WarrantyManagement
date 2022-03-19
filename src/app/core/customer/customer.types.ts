@@ -1,6 +1,6 @@
 export interface ICustomer {
   name: string;
-  mobile: string;
+  contactNo: string;
   email?: string;
   address: string;
   state: string;
