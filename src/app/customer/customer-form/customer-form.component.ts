@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { debounceTime, map, Observable } from 'rxjs';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 import { CustomerService } from 'src/app/core/customer/customer.service';
 import { CustomerFieldsComponent } from 'src/app/shared/customer-fields/customer-fields.component';
@@ -15,7 +15,7 @@ import { Dealer } from 'src/app/dealer/dealer.component';
 })
 export class CustomerFormComponent implements OnInit {
   @ViewChild(CustomerFieldsComponent) _cusCompt!: CustomerFieldsComponent;
-  dealerCtrl: FormControl = new FormControl('');
+  dealerCtrl: FormControl = new FormControl('', [Validators.required]);
   isError: boolean = false;
   //auto complate input fild
   options: Dealer[] = [];
@@ -29,7 +29,7 @@ export class CustomerFormComponent implements OnInit {
 
   ngOnInit(): void {
     this._dealerService.getDealers().subscribe((res: any) => {
-      this.options = res.data;
+      this.options = res;
     });
     this.filteredOptions = this.dealerCtrl.valueChanges.pipe(
       // debounceTime(300),

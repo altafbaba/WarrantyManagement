@@ -1,7 +1,7 @@
 <!-- shared  -->
 
 <div [formGroup]="customergroup">
-  <div class="row">
+  <div class="row fonP">
     <mat-form-field class="col" appearance="outline">
       <mat-label>Customer Name</mat-label>
       <input
@@ -9,6 +9,7 @@
         formControlName="name"
         matInput
         [matAutocomplete]="auto"
+        class="fonP"
       />
       <mat-autocomplete
         autoActiveFirstOption
@@ -25,33 +26,33 @@
     </mat-form-field>
 
     <mat-form-field class="col" appearance="outline">
-      <mat-label>Mobile No</mat-label>
+      <mat-label class="fonP">Mobile No</mat-label>
       <input matInput formControlName="contactNo" />
     </mat-form-field>
     <mat-form-field class="col" appearance="outline">
-      <mat-label>Email Id</mat-label>
-      <input matInput formControlName="email" />
+      <mat-label class="fonP">Email Id</mat-label>
+      <input class="fonP" matInput formControlName="email" />
     </mat-form-field>
   </div>
   <div class="row">
     <mat-form-field class="col" appearance="outline">
-      <mat-label>Address</mat-label>
+      <mat-label class="fonP">Address</mat-label>
       <textarea matInput formControlName="address"></textarea>
     </mat-form-field>
   </div>
   <div class="row">
     <mat-form-field class="col" appearance="outline">
-      <mat-label>State</mat-label>
+      <mat-label class="fonP">State</mat-label>
       <input matInput formControlName="state" />
     </mat-form-field>
 
     <mat-form-field class="col" appearance="outline">
-      <mat-label>City</mat-label>
+      <mat-label class="fonP">City</mat-label>
       <input matInput formControlName="city" />
     </mat-form-field>
 
     <mat-form-field class="col" appearance="outline">
-      <mat-label>PinCode</mat-label>
+      <mat-label class="fonP">PinCode</mat-label>
       <input matInput formControlName="pincode" />
     </mat-form-field>
   </div>

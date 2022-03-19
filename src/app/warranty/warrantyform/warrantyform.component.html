@@ -8,41 +8,43 @@
   <h5>Product Details</h5>
   <div class="row">
     <mat-form-field class="col" appearance="outline">
-      <mat-label>Product</mat-label>
+      <mat-label class="fonP">Product</mat-label>
 
       <input matInput formControlName="product" />
     </mat-form-field>
     <mat-form-field class="col" appearance="outline">
-      <mat-label>Model No</mat-label>
+      <mat-label class="fonP">Model No</mat-label>
       <input matInput formControlName="modelNo" />
     </mat-form-field>
 
     <mat-form-field class="col" appearance="outline">
-      <mat-label>S/N</mat-label>
+      <mat-label class="fonP">Serial Number</mat-label>
       <input matInput formControlName="contactNo" />
     </mat-form-field>
   </div>
   <div class="row">
     <mat-form-field class="col" appearance="outline">
-      <mat-label>WSR No</mat-label>
+      <mat-label class="fonP">WSR No</mat-label>
       <input matInput formControlName="contactNo" />
     </mat-form-field>
 
     <mat-form-field class="col" appearance="outline">
-      <mat-label>Warranty Start Date</mat-label>
+      <mat-label class="fonP">Warranty Start Date</mat-label>
       <input matInput [matDatepicker]="picker" formControlName="startDate" />
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker touchUi #picker></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field class="col" appearance="outline">
-      <mat-label>Warranty End Date</mat-label>
+      <mat-label class="fonP">Warranty End Date</mat-label>
       <input matInput [matDatepicker]="picker2" formControlName="endDate" />
       <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
       <mat-datepicker touchUi #picker2></mat-datepicker>
     </mat-form-field>
   </div>
   <div style="display: flex; justify-content: end">
-    <button mat-raised-button color="primary" (click)="save()">Save</button>
+    <button mat-raised-button color="primary" class="fonP" (click)="save()">
+      Save
+    </button>
   </div>
 </div>

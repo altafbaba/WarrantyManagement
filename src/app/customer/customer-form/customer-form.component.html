@@ -3,7 +3,7 @@
 
   <div class="mt-4">
     <!-- customer fields component import   -->
-    <mat-form-field class="example-full-width" appearance="outline">
+    <mat-form-field class="example-full-width fonP" appearance="outline">
       <mat-label>Dealer Name</mat-label>
       <input [formControl]="dealerCtrl" matInput [matAutocomplete]="auto" />
       <mat-autocomplete
@@ -29,7 +29,9 @@
         margin-right: 22px;
       "
     >
-      <button mat-raised-button color="primary" (click)="save()">Save</button>
+      <button mat-raised-button color="primary" class="fonP" (click)="save()">
+        Save
+      </button>
     </div>
   </div>
 </div>
