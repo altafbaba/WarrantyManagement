@@ -6,7 +6,7 @@ body {
 }
 body {
   margin: 0;
-  font-family: "Poppins", "Helvetica Neue", sans-serif;
+  font-family: "Poppins";
 }
 mat-card {
   border-radius: 2rem !important;
@@ -18,4 +18,8 @@ mat-card:hover {
 }
 .fonP {
   font-family: Poppins !important;
+}
+.tablebor {
+  border: 1px solid rgb(226, 226, 226);
+  box-shadow: none !important;
 }
