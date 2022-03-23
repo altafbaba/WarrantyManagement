@@ -67,8 +67,8 @@
       <th mat-header-cell *matHeaderCellDef color="primary" class="fonP">
         No.
       </th>
-      <td mat-cell *matCellDef="let element" class="fonP">
-        {{ element.position }}
+      <td mat-cell *matCellDef="let element; let i = index" class="fonP">
+        {{ i + 1 }}
       </td>
     </ng-container>
     <ng-container matColumnDef="name">

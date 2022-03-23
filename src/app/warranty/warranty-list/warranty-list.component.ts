@@ -20,6 +20,7 @@ export class WarrantyListComponent implements OnInit {
   @ViewChild(CustomerFieldsComponent) _custm: CustomerFieldsComponent;
   displayedColumns: any[] = [
     'position',
+    'wsr',
     'name',
     'contactNo',
     'product',
