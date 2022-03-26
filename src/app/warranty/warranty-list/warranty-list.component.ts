@@ -15,7 +15,7 @@ import { CustomerFieldsComponent } from 'src/app/shared/customer-fields/customer
   styleUrls: ['./warranty-list.component.scss'],
 })
 export class WarrantyListComponent implements OnInit {
-  @Input() data: any[] = [];
+  @Input() data: IWarranty[] = [];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(CustomerFieldsComponent) _custm: CustomerFieldsComponent;
   displayedColumns: any[] = [
@@ -28,7 +28,7 @@ export class WarrantyListComponent implements OnInit {
     'srNo',
     'status',
   ];
-  dataSource = new MatTableDataSource<IWarranty>([]);
+  @Input() dataSource = new MatTableDataSource<IWarranty>([]);
 
   constructor(
     private _dealerService: DealerService,

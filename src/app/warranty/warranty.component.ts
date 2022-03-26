@@ -8,6 +8,8 @@ import { CustomerFieldsComponent } from '../shared/customer-fields/customer-fiel
 import { MatTableDataSource } from '@angular/material/table';
 import { ICustomer } from '../core/customer/customer.types';
 import { CustomerService } from '../core/customer/customer.service';
+import { IWarranty } from '../core/warranty/warranty.types';
+import { WarrantyService } from '../core/warranty/warranty.service';
 @Component({
   selector: 'app-warranty',
   templateUrl: './warranty.component.html',
@@ -18,11 +20,11 @@ export class WarrantyComponent implements OnInit {
   data: any[] = [];
   isError: boolean = false;
 
-  constructor(private _dealerService: DealerService) {}
-  dataSource = new MatTableDataSource<ICustomer>([]);
+  constructor(private _warrantyService: WarrantyService) {}
+  dataSource = new MatTableDataSource<IWarranty>([]);
   ngOnInit(): void {
-    this._dealerService.getDealers().subscribe((response: any) => {
-      this.data = response;
+    this._warrantyService.getWarranty().subscribe((res: any) => {
+      this.dataSource.data = res;
     });
   }
   applyFilter(event: Event) {

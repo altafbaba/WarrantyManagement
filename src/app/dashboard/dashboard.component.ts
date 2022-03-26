@@ -20,7 +20,6 @@ export class DashboardComponent implements OnInit {
     'modelNo',
     'startDate',
     'endDate',
-
     'state',
     'city',
   ];
