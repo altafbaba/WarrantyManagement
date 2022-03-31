@@ -23,11 +23,10 @@ export class DealerFormComponent implements OnInit {
     state: new FormControl('', [Validators.required]),
     city: new FormControl('', [Validators.required]),
     pincode: new FormControl('', [
-      Validators.required,
       Validators.maxLength(6),
       Validators.minLength(6),
     ]),
-    gstNo: new FormControl('', [Validators.required]),
+    gstNo: new FormControl(''),
   });
 
   constructor(

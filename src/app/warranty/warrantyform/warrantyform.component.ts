@@ -23,11 +23,11 @@ export class WarrantyformComponent implements OnInit {
     private _cstmService: CustomerService
   ) {}
   warrantygroup: FormGroup = new FormGroup({
-    contactNo: new FormControl('1231231230', [Validators.required]),
-    product: new FormControl('samsung tv', [Validators.required]),
-    modelNo: new FormControl('qweasd', [Validators.required]),
-    serialNo: new FormControl('qweasd', [Validators.required]),
-    WSRNo: new FormControl('qweasd', [Validators.required]),
+    contactNo: new FormControl('', [Validators.required]),
+    product: new FormControl('', [Validators.required]),
+    modelNo: new FormControl('', [Validators.required]),
+    serialNo: new FormControl('', [Validators.required]),
+    WSRNo: new FormControl('', [Validators.required]),
     endDate: new FormControl('', [Validators.required]),
     startDate: new FormControl('', [Validators.required]),
   });
@@ -59,7 +59,5 @@ export class WarrantyformComponent implements OnInit {
           }
         );
       });
-
-    this._router.navigateByUrl('/Warranty');
   }
 }
