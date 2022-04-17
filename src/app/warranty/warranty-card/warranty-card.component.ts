@@ -5,6 +5,8 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { isPast } from 'date-fns';
 import { WarrantyService } from 'src/app/core/warranty/warranty.service';
 import { IWarranty } from 'src/app/core/warranty/warranty.types';
@@ -25,7 +27,9 @@ export class WarrantyCardComponent implements OnInit {
 
   constructor(
     private _warrantyService: WarrantyService,
+    private router: Router,
     public dialogRef: MatDialogRef<WarrantyCardComponent>,
+    public snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: string
   ) {}
 
@@ -50,7 +54,11 @@ export class WarrantyCardComponent implements OnInit {
       claims: [...this.warrantyData.claims, claim],
     };
     this._warrantyService.clamWarranty(clm).subscribe((resp: any) => {
-      console.log(clm);
+      this.snackBar
+        .open('Warranty Claimed Successfully ! ', 'Close')
+        ._dismissAfter(3500);
+      this.dialogRef.close();
+
       // this.remark = resp;
     });
   }

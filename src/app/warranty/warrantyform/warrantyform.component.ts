@@ -23,7 +23,6 @@ export class WarrantyformComponent implements OnInit {
     private _cstmService: CustomerService
   ) {}
   warrantygroup: FormGroup = new FormGroup({
-    contactNo: new FormControl('', [Validators.required]),
     product: new FormControl('', [Validators.required]),
     modelNo: new FormControl('', [Validators.required]),
     serialNo: new FormControl('', [Validators.required]),

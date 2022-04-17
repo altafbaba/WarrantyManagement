@@ -40,7 +40,7 @@ export class CustomerFieldsComponent implements OnInit {
 
     //get Coustomer data form API
     this._getcustomer.getCustomers().subscribe((Response: any) => {
-      this.data = Response.data;
+      if (Response.data) this.data = Response.data;
     });
   }
   private _filter(value: any): any[] {
